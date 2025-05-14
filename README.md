@@ -87,7 +87,6 @@
 
 | リポジトリ名 | 説明                                  |
 |--------------|-------------------------------------|
-| [laravel-project](https://github.com/tamai-hideyuki/laravel-project.git) | Laravelを初めて構築した時のもの                 |
 | [main](https://github.com/tamai-hideyuki/main.git) | オフライン⇔オンライン自動切替・IndexedDB連携のPWA実験環境 |
 
 ---
@@ -107,8 +106,6 @@
 |--------------|-----------------------------------------|
 | [docker-symfony-lite](https://github.com/tamai-hideyuki/docker-symfony-lite.git) | Symfony理解のために構築した最小Docker構成             |
 | [ddd-ec-project](https://github.com/tamai-hideyuki/ddd-ec-project.git) | DDD＋クリーンアーキテクチャを適用したECサイトプロトタイプ（現在構築中） |
-| [ddd-project](https://github.com/tamai-hideyuki/ddd-project.git) | LaravelベースのDDDアプローチ習得用サンプル（現在構築中）              |
-
 ---
 
 ## 補足
