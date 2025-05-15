@@ -17,6 +17,7 @@
 - [🌐 Web & PWA](#-web--pwa)
 - [🎮 ゲーム & アルゴリズム](#-ゲーム--アルゴリズム)
 - [⚙️ 学習用 & 設計検証](#-学習用--設計検証)
+- [📊 スクリプト & 分析](#-スクリプト--分析)
 - [📌 補足](#補足)
 ---
 
@@ -56,6 +57,15 @@
 ![IndexedDB](https://img.shields.io/badge/IndexedDB-blue?style=for-the-badge)
 ![Service Worker](https://img.shields.io/badge/Service_Worker-black?style=for-the-badge)
 
+---
+#### ⚖️ 法律・構文解析・RAG
+![e-Gov API](https://img.shields.io/badge/e--Gov_API-0066CC?style=for-the-badge&logo=government&logoColor=white)
+![RAG](https://img.shields.io/badge/RAG-FF6F00?style=for-the-badge&logo=rasm&logoColor=white)
+![FAISS](https://img.shields.io/badge/FAISS-4DABF7?style=for-the-badge&logo=facebook&logoColor=white)
+![Sentence Transformers](https://img.shields.io/badge/SentenceTransformers-3F3F3F?style=for-the-badge&logo=transformers&logoColor=white)
+![Mistral 7B](https://img.shields.io/badge/Mistral_7B-FF4081?style=for-the-badge&logo=mistral&logoColor=white)
+![GGUF](https://img.shields.io/badge/GGUF-quantized-lightgrey?style=for-the-badge)
+![Apple Metal](https://img.shields.io/badge/Apple_Metal-Compatible-black?style=for-the-badge&logo=apple&logoColor=white)
 ---
 
 ### 📚 その他
@@ -99,7 +109,7 @@
 | リポジトリ名 | 説明 |
 |--------------|------|
 | [TrendSeer](https://github.com/tamai-hideyuki/TrendSeer.git) | TradingView 向け Pineスクリプト。テクニカル分析ロジックを実装 |
-
+| [shihou-no-tomo](https://github.com/tamai-hideyuki/shihou-no-tomo.git) | e-Gov法令XML APIから日本法令を取得・整形・検索し、軽量LLM（Mistral GGUF）で自然言語応答可能な司法特化エージェントを構築。Metal対応MacBookでも動作する超軽量RAG構成。（現在構築中） |
 
 ---
 
@@ -137,12 +147,12 @@
 | [ddd-ec-project](https://github.com/tamai-hideyuki/ddd-ec-project.git) | DDD＋クリーンアーキテクチャを適用したECサイトプロトタイプ（現在構築中） |
 ---
 
-## 補足
-
+## 📌 補足
 - **設計志向：** DDD・クリーンアーキテクチャ・レイヤード設計
 - **重点領域：** 認証（2FA・OAuth）／Docker活用による再現性ある環境構築／PWA・IndexedDB
 - **開発スタイル：** Issue駆動／Gitフロー運用／Makefile・CLI自動化による効率化
-
+- **新領域挑戦：** e-Gov法令データの構文解析とRAG構成による、LLMを用いた特化型エージェント構築。Mistral GGUFモデルをMetal対応Macでローカル動作。
+- **技術融合：** 法律 × RAG × LLM × CLI自動化という異分野の橋渡し。
 ---
 
 > 本ページは継続的にアップデートされます。
