@@ -32,6 +32,8 @@
 ![Java](https://img.shields.io/badge/Java-007396?style=for-the-badge&logo=java&logoColor=white)
 ![C++](https://img.shields.io/badge/C++-00599C?style=for-the-badge&logo=c%2b%2b&logoColor=white)
 ![ShellScript](https://img.shields.io/badge/ShellScript-4EAA25?style=for-the-badge&logo=gnu-bash&logoColor=white)
+![Python 3.11](https://img.shields.io/badge/Python-3.11-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![Bash](https://img.shields.io/badge/Bash-v5.1-4EAA25?style=for-the-badge&logo=gnu-bash&logoColor=white)
 
 ---
 
@@ -67,8 +69,16 @@
 ![GGUF](https://img.shields.io/badge/GGUF-quantized-lightgrey?style=for-the-badge)
 ![Apple Metal](https://img.shields.io/badge/Apple_Metal-Compatible-black?style=for-the-badge&logo=apple&logoColor=white)
 ---
+#### 🖥 コアライブラリ
+![OpenCV](https://img.shields.io/badge/OpenCV-4.11.0-5C3EE8?style=for-the-badge&logo=opencv&logoColor=white)
+![MediaPipe](https://img.shields.io/badge/MediaPipe-0.10.9-00F2C3?style=for-the-badge&logo=mediapipe&logoColor=white)
+![NumPy](https://img.shields.io/badge/NumPy-1.23.5-013243?style=for-the-badge&logo=numpy&logoColor=white)
+
 
 ### 📚 その他
+![venv](https://img.shields.io/badge/venv-enabled-444444?style=for-the-badge)
+![Makefile](https://img.shields.io/badge/Makefile-supported-000000?style=for-the-badge&logo=gnu&logoColor=white)
+![pip](https://img.shields.io/badge/pip-latest-009688?style=for-the-badge&logo=pypi&logoColor=white)
 ![Markdown](https://img.shields.io/badge/Markdown-000000?style=for-the-badge&logo=markdown)
 ![REST API](https://img.shields.io/badge/REST%20API-009688?style=for-the-badge)
 ![Wireshark](https://img.shields.io/badge/Wireshark-1679A7?style=for-the-badge&logo=wireshark)
