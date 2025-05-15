@@ -106,10 +106,11 @@
 
 ## 📊 スクリプト & 分析
 
-| リポジトリ名 | 説明 |
-|--------------|------|
-| [TrendSeer](https://github.com/tamai-hideyuki/TrendSeer.git) | TradingView 向け Pineスクリプト。テクニカル分析ロジックを実装 |
+| リポジトリ名                                                                 | 説明                                                                                                           |
+|------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------|
+| [TrendSeer](https://github.com/tamai-hideyuki/TrendSeer.git)           | TradingView 向け Pineスクリプト。テクニカル分析ロジックを実装                                                                      |
 | [shihou-no-tomo](https://github.com/tamai-hideyuki/shihou-no-tomo.git) | e-Gov法令XML APIから日本法令を取得・整形・検索し、軽量LLM（Mistral GGUF）で自然言語応答可能な司法特化エージェントを構築。Metal対応MacBookでも動作する超軽量RAG構成。（現在構築中） |
+| [cam-motion](https://github.com/tamai-hideyuki/cam-motion.git)                                                         | Pythonベースのリアルタイムモーショントラッキング／CLIツール。OpenCV＋Mediapipeで手足検出、Makefile／スクリプトにより3秒でセットアップ |
 
 ---
 
@@ -148,11 +149,11 @@
 ---
 
 ## 📌 補足
-- **設計志向：** DDD・クリーンアーキテクチャ・レイヤード設計
-- **重点領域：** 認証（2FA・OAuth）／Docker活用による再現性ある環境構築／PWA・IndexedDB
-- **開発スタイル：** Issue駆動／Gitフロー運用／Makefile・CLI自動化による効率化
-- **新領域挑戦：** e-Gov法令データの構文解析とRAG構成による、LLMを用いた特化型エージェント構築。Mistral GGUFモデルをMetal対応Macでローカル動作。
-- **技術融合：** 法律 × RAG × LLM × CLI自動化という異分野の橋渡し。
----
+- **設計志向**： DDD・クリーンアーキテクチャ・モジュール化設計
+- **環境構築**： Makefile／scripts/install_deps.sh による一発セットアップ（3秒で初期化）
+- **重点機能**： OpenCV＋Mediapipe を用いたリアルタイム手足トラッキング
+- **開発スタイル**： Issue駆動・Gitフロー・pytestによる85%カバレッジ確保
+- **拡張性**： CLIオプション（例：make run）／AVFoundationバックエンド対応／ポーリング起動で安定動作
+- **今後の展望**： 顔・姿勢・オブジェクト検出モジュール追加／GPUアクセラレーション／Pythonパッケージ配布化
 
 > 本ページは継続的にアップデートされます。
