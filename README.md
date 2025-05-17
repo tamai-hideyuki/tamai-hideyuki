@@ -43,7 +43,7 @@
 
 ---
 
-### 🧱 フレームワーク & 認証技術
+#### 🧱 フレームワーク & 認証技術
 ![Laravel](https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white)
 ![Symfony](https://img.shields.io/badge/Symfony-000000?style=for-the-badge&logo=symfony&logoColor=white)
 ![OAuth2](https://img.shields.io/badge/OAuth2-0066CC?style=for-the-badge)
@@ -51,7 +51,7 @@
 
 ---
 
-### 🛠 インフラ・自動化・開発支援
+#### 🛠 インフラ・自動化・開発支援
 ![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
 ![Makefile](https://img.shields.io/badge/Makefile-000000?style=for-the-badge&logo=gnu&logoColor=white)
 ![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
@@ -62,14 +62,14 @@
 
 ---
 
-### 📱 PWA & オフライン技術
+#### 📱 PWA & オフライン技術
 ![PWA](https://img.shields.io/badge/PWA-5A0FC8?style=for-the-badge&logo=pwa)
 ![IndexedDB](https://img.shields.io/badge/IndexedDB-blue?style=for-the-badge)
 ![Service Worker](https://img.shields.io/badge/Service_Worker-black?style=for-the-badge)
 
 ---
 
-### ⚖️ 法律・構文解析・RAG
+#### ⚖️ 法律・構文解析・RAG
 ![e-Gov API](https://img.shields.io/badge/e--Gov_API-0066CC?style=for-the-badge&logo=government&logoColor=white)
 ![RAG](https://img.shields.io/badge/RAG-FF6F00?style=for-the-badge&logo=rasm&logoColor=white)
 ![FAISS](https://img.shields.io/badge/FAISS-4DABF7?style=for-the-badge&logo=facebook&logoColor=white)
@@ -80,14 +80,14 @@
 
 ---
 
-### 🖥 コアライブラリ・技術基盤
+#### 🖥 コアライブラリ・技術基盤
 ![OpenCV](https://img.shields.io/badge/OpenCV-4.11.0-5C3EE8?style=for-the-badge&logo=opencv&logoColor=white)
 ![MediaPipe](https://img.shields.io/badge/MediaPipe-0.10.9-00F2C3?style=for-the-badge&logo=mediapipe&logoColor=white)
 ![NumPy](https://img.shields.io/badge/NumPy-1.23.5-013243?style=for-the-badge&logo=numpy&logoColor=white)
 
 ---
 
-### 📚 その他・ドキュメント関連
+#### 📚 その他・ドキュメント関連
 ![venv](https://img.shields.io/badge/venv-enabled-444444?style=for-the-badge)
 ![pip](https://img.shields.io/badge/pip-latest-009688?style=for-the-badge&logo=pypi&logoColor=white)
 ![Markdown](https://img.shields.io/badge/Markdown-000000?style=for-the-badge&logo=markdown)
