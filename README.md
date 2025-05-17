@@ -24,20 +24,26 @@
 
 ## 🧰 技術スタックバッジ
 
-### 🧑‍💻 言語 & スクリプト
+---
+### 🧠 言語別スキル
+
+#### 🐍 バックエンド言語（サーバーサイド）
 ![PHP](https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
 ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
 ![Ruby](https://img.shields.io/badge/Ruby-CC342D?style=for-the-badge&logo=ruby&logoColor=white)
 ![Java](https://img.shields.io/badge/Java-007396?style=for-the-badge&logo=java&logoColor=white)
 ![C++](https://img.shields.io/badge/C++-00599C?style=for-the-badge&logo=c%2b%2b&logoColor=white)
+
+#### 🎨 フロントエンド言語（クライアントサイド）
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+
+#### 🖥️ スクリプト・オートメーション
 ![ShellScript](https://img.shields.io/badge/ShellScript-4EAA25?style=for-the-badge&logo=gnu-bash&logoColor=white)
-![Python 3.11](https://img.shields.io/badge/Python-3.11-3776AB?style=for-the-badge&logo=python&logoColor=white)
 ![Bash](https://img.shields.io/badge/Bash-v5.1-4EAA25?style=for-the-badge&logo=gnu-bash&logoColor=white)
 
 ---
 
-### 🧱 フレームワーク & 認証
+### 🧱 フレームワーク & 認証技術
 ![Laravel](https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white)
 ![Symfony](https://img.shields.io/badge/Symfony-000000?style=for-the-badge&logo=symfony&logoColor=white)
 ![OAuth2](https://img.shields.io/badge/OAuth2-0066CC?style=for-the-badge)
@@ -45,12 +51,14 @@
 
 ---
 
-### 🛠 開発支援・自動化・インフラ
+### 🛠 インフラ・自動化・開発支援
 ![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
 ![Makefile](https://img.shields.io/badge/Makefile-000000?style=for-the-badge&logo=gnu&logoColor=white)
 ![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
 ![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
 ![Nginx](https://img.shields.io/badge/Nginx-009639?style=for-the-badge&logo=nginx&logoColor=white)
+![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)
+![Curl](https://img.shields.io/badge/cURL-005571?style=for-the-badge&logo=curl&logoColor=white)
 
 ---
 
@@ -60,7 +68,8 @@
 ![Service Worker](https://img.shields.io/badge/Service_Worker-black?style=for-the-badge)
 
 ---
-#### ⚖️ 法律・構文解析・RAG
+
+### ⚖️ 法律・構文解析・RAG
 ![e-Gov API](https://img.shields.io/badge/e--Gov_API-0066CC?style=for-the-badge&logo=government&logoColor=white)
 ![RAG](https://img.shields.io/badge/RAG-FF6F00?style=for-the-badge&logo=rasm&logoColor=white)
 ![FAISS](https://img.shields.io/badge/FAISS-4DABF7?style=for-the-badge&logo=facebook&logoColor=white)
@@ -68,20 +77,24 @@
 ![Mistral 7B](https://img.shields.io/badge/Mistral_7B-FF4081?style=for-the-badge&logo=mistral&logoColor=white)
 ![GGUF](https://img.shields.io/badge/GGUF-quantized-lightgrey?style=for-the-badge)
 ![Apple Metal](https://img.shields.io/badge/Apple_Metal-Compatible-black?style=for-the-badge&logo=apple&logoColor=white)
+
 ---
-#### 🖥 コアライブラリ
+
+### 🖥 コアライブラリ・技術基盤
 ![OpenCV](https://img.shields.io/badge/OpenCV-4.11.0-5C3EE8?style=for-the-badge&logo=opencv&logoColor=white)
 ![MediaPipe](https://img.shields.io/badge/MediaPipe-0.10.9-00F2C3?style=for-the-badge&logo=mediapipe&logoColor=white)
 ![NumPy](https://img.shields.io/badge/NumPy-1.23.5-013243?style=for-the-badge&logo=numpy&logoColor=white)
 
+---
 
-### 📚 その他
+### 📚 その他・ドキュメント関連
 ![venv](https://img.shields.io/badge/venv-enabled-444444?style=for-the-badge)
-![Makefile](https://img.shields.io/badge/Makefile-supported-000000?style=for-the-badge&logo=gnu&logoColor=white)
 ![pip](https://img.shields.io/badge/pip-latest-009688?style=for-the-badge&logo=pypi&logoColor=white)
 ![Markdown](https://img.shields.io/badge/Markdown-000000?style=for-the-badge&logo=markdown)
 ![REST API](https://img.shields.io/badge/REST%20API-009688?style=for-the-badge)
+![XML](https://img.shields.io/badge/XML-EB5E28?style=for-the-badge&logo=html5&logoColor=white)
 ![Wireshark](https://img.shields.io/badge/Wireshark-1679A7?style=for-the-badge&logo=wireshark)
+
 ---
 
 ## 🌱 目指す開発エンジニア像
