@@ -1,8 +1,8 @@
 # Tamai Hideyuki — Repository Snapshot
 
-未経験から開発エンジニアへの道を歩み、**Docker × Laravel × 認証設計 × CLI自動化 × リアルタイムモーショントラッキング**を軸に、個人開発を重ねてまいりました。  
-この一覧では、私が構築・設計・発表してきたリポジトリ群をジャンル別に紹介します。  
-いずれも **実際に動作するプロジェクト**であり、学びと挑戦の軌跡を示しております。
+未経験から開発エンジニアの道へ進み、**Docker × Laravel × 認証設計 × CLI自動化 × リアルタイムモーショントラッキング** を軸に、実践的な個人開発を重ねてまいりました。  
+この一覧では、私が自ら設計・構築・発表してきたプロジェクトをジャンル別に紹介しております。  
+いずれも **実際に動作する具体的なアウトプット**であり、学びと挑戦の軌跡をリアルに示すものです。
 
 ---
 ## 📖 目次
@@ -119,9 +119,9 @@
 | リポジトリ名                                                                 | 説明                                                                                                           |
 |------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------|
 | [TrendSeer](https://github.com/tamai-hideyuki/TrendSeer.git)           | TradingView 向け Pineスクリプト。テクニカル分析ロジックを実装                                                                      |
-| [shihou-no-tomo](https://github.com/tamai-hideyuki/shihou-no-tomo.git) | e-Gov法令XML APIから日本法令を取得・整形・検索し、軽量LLM（Mistral GGUF）で自然言語応答可能な司法特化エージェントを構築。Metal対応MacBookでも動作する超軽量RAG構成。（現在構築中） |
 | [cam-motion](https://github.com/tamai-hideyuki/cam-motion.git)                                                         | Pythonベースのリアルタイムモーショントラッキング／CLIツール。OpenCV＋Mediapipeで手足検出、Makefile／スクリプトにより3秒でセットアップ |
-
+| [hourei-api-server](https://github.com/tamai-hideyuki/hourei-api-server.git) | Laravel 12.x + Dockerで構築したe-Gov法令APIの中継サーバー。法令名一覧・条文内容・更新法令など、4種のAPIをラップし、Content-Type: XML形式で外部クライアントに提供可能。セミコロン構文など特殊仕様にも対応。動作確認APIも搭載し、API基盤として即利用可能。 |
+| [shihou-no-tomo](https://github.com/tamai-hideyuki/shihou-no-tomo.git) | e-Gov法令XML APIから日本法令を取得・整形・検索し、軽量LLM（Mistral GGUF）で自然言語応答可能な司法特化エージェントを構築。Metal対応MacBookでも動作する超軽量RAG構成。（現在構築中） |
 ---
 
 ## 📚 LT資料
