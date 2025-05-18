@@ -1,3 +1,5 @@
+### [英語(English)](./docs/README.en.md)
+
 # Tamai Hideyuki — Repository Snapshot
 
 未経験から開発エンジニアの道へ進み、**Docker × Laravel × 認証設計 × CLI自動化 × リアルタイムモーショントラッキング** を軸に、実践的な個人開発を重ねてまいりました。  
