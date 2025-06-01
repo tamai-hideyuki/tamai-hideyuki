@@ -2,10 +2,8 @@
 
 # Tamai Hideyuki — Repository Snapshot
 
-未経験から開発エンジニアの道へ進み、**Docker × Laravel × 認証設計 × CLI自動化 × リアルタイムモーショントラッキング** を軸に、実践的な個人開発を重ねてまいりました。  
-この一覧では、私が自ら設計・構築・発表してきたプロジェクトをジャンル別に紹介しております。  
-いずれも **実際に動作する具体的なアウトプット**であり、学びと挑戦の軌跡をリアルに示すものです。
-
+“Docker × Laravel ×認証設計 ×CLI自動化 ×リアルタイムモーショントラッキング” などから始まり、独学で複数のプロジェクトを設計・構築・公開してきました。
+以下では、ジャンル別に「実際に動作する具体的なアウトプット」を15個掲載してします。
 ---
 ## 📖 目次
 - [🧰 技術スタックバッジ](#-技術スタックバッジ)
@@ -26,48 +24,61 @@
 
 ## 🧰 技術スタックバッジ
 
----
-### 🧠 言語別スキル
 
-#### 🐍 バックエンド言語（サーバーサイド）
+---
+
+### 🐍 バックエンド言語（サーバーサイド）
 ![PHP](https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white)
 ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
 ![Ruby](https://img.shields.io/badge/Ruby-CC342D?style=for-the-badge&logo=ruby&logoColor=white)
 ![Java](https://img.shields.io/badge/Java-007396?style=for-the-badge&logo=java&logoColor=white)
 ![C++](https://img.shields.io/badge/C++-00599C?style=for-the-badge&logo=c%2b%2b&logoColor=white)
 
-#### 🎨 フロントエンド言語（クライアントサイド）
+---
+
+### 🎨 フロントエンド言語（クライアントサイド）
 ![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black)
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwindcss&logoColor=white)
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)
 
-#### 🖥️ スクリプト・オートメーション
+---
+
+### 🖥️ スクリプト・オートメーション
 ![ShellScript](https://img.shields.io/badge/ShellScript-4EAA25?style=for-the-badge&logo=gnu-bash&logoColor=white)
 ![Bash](https://img.shields.io/badge/Bash-v5.1-4EAA25?style=for-the-badge&logo=gnu-bash&logoColor=white)
 
-#### 🧱 フレームワーク & 認証技術
+---
+
+### 🧱 フレームワーク＆認証技術
 ![Laravel](https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white)
 ![Symfony](https://img.shields.io/badge/Symfony-000000?style=for-the-badge&logo=symfony&logoColor=white)
 ![OAuth2](https://img.shields.io/badge/OAuth2-0066CC?style=for-the-badge)
 ![Google Authenticator](https://img.shields.io/badge/Google_Auth-4285F4?style=for-the-badge&logo=google)
 
-#### 🛠 インフラ・自動化・開発支援
+---
+
+### 🛠 インフラ・自動化・開発支援
 ![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
 ![Makefile](https://img.shields.io/badge/Makefile-000000?style=for-the-badge&logo=gnu&logoColor=white)
 ![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
 ![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
 ![Nginx](https://img.shields.io/badge/Nginx-009639?style=for-the-badge&logo=nginx&logoColor=white)
 ![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)
-![Curl](https://img.shields.io/badge/cURL-005571?style=for-the-badge&logo=curl&logoColor=white)
+![cURL](https://img.shields.io/badge/cURL-005571?style=for-the-badge&logo=curl&logoColor=white)
 
-#### 📱 PWA & オフライン技術
+---
+
+### 📱 PWA & オフライン技術
 ![PWA](https://img.shields.io/badge/PWA-5A0FC8?style=for-the-badge&logo=pwa)
-![IndexedDB](https://img.shields.io/badge/IndexedDB-blue?style=for-the-badge)
-![Service Worker](https://img.shields.io/badge/Service_Worker-black?style=for-the-badge)
+![IndexedDB](https://img.shields.io/badge/IndexedDB-003366?style=for-the-badge)
+![Service Worker](https://img.shields.io/badge/Service_Worker-000000?style=for-the-badge)
 
-#### ⚖️ 法律・構文解析・RAG
+---
+
+### ⚖️ 法律・構文解析・RAG
 ![e-Gov API](https://img.shields.io/badge/e--Gov_API-0066CC?style=for-the-badge&logo=government&logoColor=white)
 ![RAG](https://img.shields.io/badge/RAG-FF6F00?style=for-the-badge&logo=rasm&logoColor=white)
 ![FAISS](https://img.shields.io/badge/FAISS-4DABF7?style=for-the-badge&logo=facebook&logoColor=white)
@@ -75,16 +86,20 @@
 ![GGUF](https://img.shields.io/badge/GGUF-quantized-lightgrey?style=for-the-badge)
 ![Apple Metal](https://img.shields.io/badge/Apple_Metal-Compatible-black?style=for-the-badge&logo=apple&logoColor=white)
 
-#### 🖥 コアライブラリ・技術基盤
-![OpenCV](https://img.shields.io/badge/OpenCV-4.11.0-5C3EE8?style=for-the-badge&logo=opencv&logoColor=white)
-![MediaPipe](https://img.shields.io/badge/MediaPipe-0.10.9-00F2C3?style=for-the-badge&logo=mediapipe&logoColor=white)
-![NumPy](https://img.shields.io/badge/NumPy-1.23.5-013243?style=for-the-badge&logo=numpy&logoColor=white)
+---
 
-#### 📚 その他・ドキュメント関連
+### 🖥 コアライブラリ・技術基盤
+![OpenCV](https://img.shields.io/badge/OpenCV-5C3EE8?style=for-the-badge&logo=opencv&logoColor=white)
+![MediaPipe](https://img.shields.io/badge/MediaPipe-00F2C3?style=for-the-badge&logo=mediapipe&logoColor=white)
+![NumPy](https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white)
+
+---
+
+### 📚 その他・ドキュメント関連
 ![venv](https://img.shields.io/badge/venv-enabled-444444?style=for-the-badge)
 ![pip](https://img.shields.io/badge/pip-latest-009688?style=for-the-badge&logo=pypi&logoColor=white)
 ![Markdown](https://img.shields.io/badge/Markdown-000000?style=for-the-badge&logo=markdown)
-![REST API](https://img.shields.io/badge/REST%20API-009688?style=for-the-badge)
+![REST API](https://img.shields.io/badge/REST_API-009688?style=for-the-badge&logo=rest&logoColor=white)
 ![XML](https://img.shields.io/badge/XML-EB5E28?style=for-the-badge&logo=html5&logoColor=white)
 ![Wireshark](https://img.shields.io/badge/Wireshark-1679A7?style=for-the-badge&logo=wireshark)
 
@@ -122,12 +137,12 @@
 
 ## 📊 スクリプト & 分析
 
-| リポジトリ名                                                                 | 説明                                                                                                           |
-|------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------|
-| [TrendSeer](https://github.com/tamai-hideyuki/TrendSeer.git)           | TradingView 向け Pineスクリプト。テクニカル分析ロジックを実装                                                                      |
-| [cam-motion](https://github.com/tamai-hideyuki/cam-motion.git)                                                         | Pythonベースのリアルタイムモーショントラッキング／CLIツール。OpenCV＋Mediapipeで手足検出、Makefile／スクリプトにより3秒でセットアップ |
-| [hourei-api-server](https://github.com/tamai-hideyuki/hourei-api-server.git) | Laravel 12.x + Dockerで構築したe-Gov法令APIの中継サーバー。法令名一覧・条文内容・更新法令など、4種のAPIをラップし、Content-Type: XML形式で外部クライアントに提供可能。セミコロン構文など特殊仕様にも対応。動作確認APIも搭載し、API基盤として即利用可能。 |
-| [shihou-no-tomo](https://github.com/tamai-hideyuki/shihou-no-tomo.git) | e-Gov法令XML APIから日本法令を取得・整形・検索し、軽量LLM（Mistral GGUF）で自然言語応答可能な司法特化エージェントを構築。Metal対応MacBookでも動作する超軽量RAG構成。（現在構築中） |
+| リポジトリ名                                                                 | 説明                                                                                                                                                                  |
+|------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| [TrendSeer](https://github.com/tamai-hideyuki/TrendSeer.git)           | TradingView 向け Pineスクリプト。テクニカル分析ロジックを実装                                                                                                                             |
+| [cam-motion](https://github.com/tamai-hideyuki/cam-motion.git)                                                         | Pythonベースのリアルタイムモーショントラッキング／CLIツール。OpenCV＋Mediapipeで手足検出、Makefile／スクリプトにより3秒でセットアップ                                                                                 |
+| [hourei-api-server](https://github.com/tamai-hideyuki/hourei-api-server.git) | (EC2デプロイ中) Laravel 12.x + Dockerで構築したe-Gov法令APIの中継サーバー。法令名一覧・条文内容・更新法令など、4種のAPIをラップし、Content-Type: XML形式で外部クライアントに提供可能。セミコロン構文など特殊仕様にも対応。動作確認APIも搭載し、API基盤として即利用可能。 |
+| [shihou-no-tomo](https://github.com/tamai-hideyuki/shihou-no-tomo.git) | e-Gov法令XML APIから日本法令を取得・整形・検索し、軽量LLM（Mistral GGUF）で自然言語応答可能な司法特化エージェントを構築。Metal対応MacBookでも動作する超軽量RAG構成。（現在構築中）                                                      |
 ---
 
 ## 📚 LT資料
@@ -141,9 +156,10 @@
 
 ## 🌐 Web & PWA
 
-| リポジトリ名 | 説明                                  |
-|--------------|-------------------------------------|
+| リポジトリ名                                             | 説明                                  |
+|----------------------------------------------------|-------------------------------------|
 | [main](https://github.com/tamai-hideyuki/main.git) | オフライン⇔オンライン自動切替・IndexedDB連携のPWA実験環境 |
+| [qr-generator](https://github.com/tamai-hideyuki/qr-generator.git) | 任意のURLからQRコードを生成し、ダウンロード可能にするWeb+PWAアプリ |
 
 ---
 
