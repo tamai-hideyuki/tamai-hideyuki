@@ -154,12 +154,11 @@ Docker × Laravel ×認証設計 ×CLI自動化 ×リアルタイムモーショ
 
 ---
 
-## 🌐 Web & PWA
-
-| リポジトリ名                                             | 説明                                  |
-|----------------------------------------------------|-------------------------------------|
-| [main](https://github.com/tamai-hideyuki/main.git) | オフライン⇔オンライン自動切替・IndexedDB連携のPWA実験環境 |
-| [qr-generator](https://github.com/tamai-hideyuki/qr-generator.git) | 任意のURLからQRコードを生成し、ダウンロード可能にするWeb+PWAアプリ |
+| リポジトリ名                                                       | 説明                                                                                                           |
+|------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------|
+| [main](https://github.com/tamai-hideyuki/main.git)               | オフライン⇔オンライン自動切替・IndexedDB連携のPWA実験環境                                                              |
+| [qr-generator](https://github.com/tamai-hideyuki/qr-generator.git) | 任意のURLからQRコードを生成し、ダウンロード可能にするWeb+PWAアプリ                                                       |
+| [php-chatgpt](https://github.com/tamai-hideyuki/chat-php-gpt.git)    | 純粋 PHP のみで動作する「ChatGPT風チャットボット」。セッション管理＋ファイルログで会話を永続化し、“考え中…”演出やキーワード抽出による文脈参照などの工夫を凝らした Web アプリ |
 
 ---
 
