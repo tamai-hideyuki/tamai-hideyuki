@@ -1,4 +1,4 @@
-#### [日々使うツール等まとめ](./docs/tools.md)
+#### [日々使うツール等まとめ](docs/tools/tools.md)
 #### [英語(English)](./docs/README.en.md)
 
 # Tamai Hideyuki — Repository Snapshot
