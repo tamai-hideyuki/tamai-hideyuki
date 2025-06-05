@@ -1,6 +1,8 @@
-### [英語(English)](./docs/README.en.md)
+#### [日々使うツール等](./docs/tools.md)
+#### [英語(English)](./docs/README.en.md)
 
 # Tamai Hideyuki — Repository Snapshot
+
 Docker × Laravel ×認証設計 ×CLI自動化 ×リアルタイムモーショントラッキング などから始まり、独学で複数のプロジェクトを設計・構築・公開してきました。<br>
 以下では、ジャンル別に「実際に動作する具体的なアウトプット」を15個掲載してします。  
 
