@@ -1,3 +1,4 @@
+```mermaid
 sequenceDiagram
     participant ユーザー
     participant Client as クライアントアプリケーション
@@ -28,3 +29,5 @@ sequenceDiagram
     deactivate ResourceServer
 
     Note over Client: 5. 画面表示またはセッション生成
+```
+

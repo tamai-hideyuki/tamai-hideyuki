@@ -26,7 +26,7 @@
 
 ### 2.1 OAuth（認可フロー）
 
-- [`oauth/common-flow.mmd`](./oauth/common-flow.mmd)  
+- [`oauth/common-flow.mmd`](oauth/common-flow.md)  
   共通の OAuth 2.0 フロー図（マーメイド記法）
 
 - プロバイダごとの詳細
