@@ -3,6 +3,26 @@
 ## 🔍 概要
 - Yahoo! JAPAN の OAuth 2.0 認証では、OpenID Connect (OIDC)のスペックを使用することで、ユーザーのプロファイル情報を API 経由で取得できます。
 
+## 🔐 認証フローの概要
+```mermaid
+sequenceDiagram
+    participant User
+    participant Browser
+    participant YourApp
+    participant Yahoo
+
+    User->>Browser: 「Yahoo! でログイン」ボタン
+    Browser->>YourApp: /auth/yahoo/redirect
+    YourApp->>Yahoo: 許可リクエスト
+    Yahoo->>User: Yahoo! JAPAN ログイン画面
+    User->>Yahoo: 認証 と 許可
+    Yahoo->>YourApp: 許可コード を返却
+    YourApp->>Yahoo: トークン取得
+    YourApp->>Yahoo: userinfo API で情報取得
+    Yahoo-->>YourApp: ユーザー情報 JSON
+```
+
+
 ## ✅ ユーザー情報 API (userinfo)
 
 - エンドポイント:
@@ -51,24 +71,6 @@ openid email profile
 - sub は userinfo API と同じ値
 - email は取得可能だが、認証手順により null の場合も
 
-## 🔐 認証フローの概要
-```mermaid
-sequenceDiagram
-    participant User
-    participant Browser
-    participant YourApp
-    participant Yahoo
-
-    User->>Browser: 「Yahoo! でログイン」ボタン
-    Browser->>YourApp: /auth/yahoo/redirect
-    YourApp->>Yahoo: 許可リクエスト
-    Yahoo->>User: Yahoo! JAPAN ログイン画面
-    User->>Yahoo: 認証 と 許可
-    Yahoo->>YourApp: 許可コード を返却
-    YourApp->>Yahoo: トークン取得
-    YourApp->>Yahoo: userinfo API で情報取得
-    Yahoo-->>YourApp: ユーザー情報 JSON
-```
 
 ## ⚠️ 注意点
 - Yahooログイン情報は、アプリ側のプライバシーポリシーによって制限される場合あり
