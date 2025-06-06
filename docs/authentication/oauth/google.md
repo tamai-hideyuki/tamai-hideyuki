@@ -17,7 +17,7 @@ GET https://www.googleapis.com/oauth2/v3/userinfo
 | `Authorization` | `Bearer {access_token}`（ログインユーザーから取得したアクセストークン） |
 
 - レスポンス（正常時）
-```text
+```json
 {
 "sub": "110169484474386276334",
 "name": "山田 太郎",
