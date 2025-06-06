@@ -5,6 +5,58 @@
 - ただし、AlipayのOAuthはREST形式ではなく、独自仕様のAPI構造（methodパラメータ形式）と署名付きリクエストによって処理されるのが特徴です。 
 - 他のプロバイダ（Google, Appleなど）と比較して、実装には独自ロジックが必要となります。
 
+- エンドポイント
+```bash
+# method=alipay.user.info.share を指定
+POST https://openapi.alipay.com/gateway.do
+```
+- 主なクエリパラメーター（すべて必須）
+
+| パラメーター       | 内容                        |
+| ------------ | ------------------------- |
+| `method`     | `alipay.user.info.share`  |
+| `auth_token` | アクセストークン                  |
+| `app_id`     | Alipay で発行されたアプリケーション ID  |
+| `charset`    | `utf-8`                   |
+| `sign_type`  | `RSA2`                    |
+| `timestamp`  | `YYYY-MM-DD HH:mm:ss`     |
+| `version`    | `1.0`                     |
+| `sign`       | 送信パラメーター全体を RSA2 で署名した文字列 |
+
+>リクエストは application/x-www-form-urlencoded 形式で POST
+
+
+- レスポンス（正常時）
+```json
+{
+  "alipay_user_info_share_response": {
+    "code": "10000",
+    "msg": "Success",
+    "user_id": "2088102122524333",
+    "user_name": "山田 太郎",
+    "gender": "M",
+    "province": "Tokyo",
+    "city": "Minato",
+    "nick_name": "Taro",
+    "avatar": "http://tfsimg.alipay.com/images/partner/xxx.jpg"
+  },
+  "sign": "abc123..."
+}
+```
+- フィールド一覧
+
+| フィールド名      | 内容                  |
+| ----------- | ------------------- |
+| `user_id`   | Alipay 側で一意のユーザー ID |
+| `user_name` | フルネーム               |
+| `gender`    | 性別 (`M`/`F`)        |
+| `province`  | 都道府県                |
+| `city`      | 市区町村                |
+| `nick_name` | ニックネーム              |
+| `avatar`    | プロフィール画像の URL       |
+
+
+
 ## ✅ 認証フロー概要
 ```mermaid
 sequenceDiagram
