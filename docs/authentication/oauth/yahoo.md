@@ -3,6 +3,8 @@
 ## 🔍 概要
 - Yahoo! JAPAN の OAuth 2.0 認証では、OpenID Connect (OIDC)のスペックを使用することで、ユーザーのプロファイル情報を API 経由で取得できます。
 
+---
+
 - エンドポイント
 ```bash
 GET https://userinfo.yahooapis.jp/yconnect/v2/attribute
@@ -38,10 +40,7 @@ GET https://userinfo.yahooapis.jp/yconnect/v2/attribute
 | `email_verified` | メールが認証済みかどうか (`true`/`false`) |
 | `nickname`       | ニックネーム                        |
 
-
-
-
-
+---
 ## 🔐 認証フローの概要
 ```mermaid
 sequenceDiagram

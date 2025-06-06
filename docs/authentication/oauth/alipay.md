@@ -5,6 +5,8 @@
 - ただし、AlipayのOAuthはREST形式ではなく、独自仕様のAPI構造（methodパラメータ形式）と署名付きリクエストによって処理されるのが特徴です。 
 - 他のプロバイダ（Google, Appleなど）と比較して、実装には独自ロジックが必要となります。
 
+---
+
 - エンドポイント
 ```bash
 # method=alipay.user.info.share を指定
@@ -55,7 +57,7 @@ POST https://openapi.alipay.com/gateway.do
 | `nick_name` | ニックネーム              |
 | `avatar`    | プロフィール画像の URL       |
 
-
+---
 
 ## ✅ 認証フロー概要
 ```mermaid

@@ -5,7 +5,7 @@
 - Google の OAuth 2.0 認証は、OpenID Connect (OIDC) に準拠しており、安全かつ柔軟なログイン機構を提供します。
 - Laravelでは Socialite を使うことで簡単に統合可能です。
 
-
+---
 - エンドポイント
 ```bash
 GET https://www.googleapis.com/oauth2/v3/userinfo

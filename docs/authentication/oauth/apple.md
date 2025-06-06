@@ -4,6 +4,8 @@
 - "Sign in with Apple" は、Apple ID を使ってアプリケーションやウェブサービスに安全にログインできる仕組みです。
 - OAuth 2.0 および OpenID Connect (OIDC) をベースとしていますが、他のプロバイダと異なり、JWT署名によるクライアントシークレット生成や、初回ログイン時のみ取得可能なユーザー情報など、Apple特有の仕様があります。
 
+---
+
 - エンドポイント
 **ユーザー情報用の明示的な userinfo API はなく、 まずトークン取得後に ID トークン (JWT) をデコードして情報を取得します。**
 ```bash
@@ -41,7 +43,7 @@ POST https://appleid.apple.com/auth/token
 | `is_private_email` | Relay メールアドレスかどうか (`true`/`false`) |
 
 
-
+---
 ## ✅ 認証フロー概要
 
 ```mermaid
