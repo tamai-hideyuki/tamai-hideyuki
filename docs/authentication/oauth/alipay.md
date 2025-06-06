@@ -98,3 +98,4 @@ method=alipay.user.info.share
 - API は gateway.do 統一端点
 - 認証後は alipay.user.info.share でプロファイル情報を取得
 - Laravel や他のプラットフォームでは、Guzzle/カスタムロジックの実装が必要
+- 実装例 : [alipay.rb](../auth-flow-examples/alipay.rb)
