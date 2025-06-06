@@ -1,5 +1,4 @@
-#### [日々使うツール等まとめ](docs/tools/tools.md)
-#### [対応エラー記録](docs/error/error.md)
+#### [学習内容まとめ](docs/learning-journal.md)
 #### [英語(English)](./docs/README.en.md)
 
 # Tamai Hideyuki — Repository Snapshot
