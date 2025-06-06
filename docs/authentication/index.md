@@ -40,3 +40,19 @@
 3. 実務上の落とし穴（Appleの署名、Alipayの特殊仕様など）に事前に気付けるようにすること
 
 ---
+
+## 🌐 構成
+```text
+Authentication/
+├── README.md              # 各方式の概要と思想を記述
+├── OAuth/
+│   ├── Google.md          # Googleのフローや仕様
+│   ├── Apple.md           # Apple ID連携の認証フロー
+│   ├── Yahoo.md           # Yahoo Japanの特殊仕様
+│   ├── Alipay.md          # アリペイ中国圏OAuthの特徴
+│   └── common-flow.mmd    # OAuth全体のシーケンス（マーメイド記法）
+├── OpenIDConnect.md       # 認証補完としてのOIDC解説
+├── JWT.md                 # トークン方式の認証構造
+└── Comparison.md          # 各方式の違いと選定基準まとめ
+
+```
