@@ -5,6 +5,45 @@
 - Google の OAuth 2.0 認証は、OpenID Connect (OIDC) に準拠しており、安全かつ柔軟なログイン機構を提供します。
 - Laravelでは Socialite を使うことで簡単に統合可能です。
 
+
+- エンドポイント
+```text
+GET https://www.googleapis.com/oauth2/v3/userinfo
+```
+- 主なクエリパラメーター（すべて必須）
+
+| パラメーター          | 内容                                              |
+| --------------- | ----------------------------------------------- |
+| `Authorization` | `Bearer {access_token}`（ログインユーザーから取得したアクセストークン） |
+
+- レスポンス（正常時）
+```text
+{
+"sub": "110169484474386276334",
+"name": "山田 太郎",
+"given_name": "太郎",
+"family_name": "山田",
+"picture": "https://lh3.googleusercontent.com/a/abc123",
+"email": "example@gmail.com",
+"email_verified": true,
+"locale": "ja"
+}
+```
+- フィールド一覧
+
+| フィールド名           | 内容                            |
+| ---------------- | ----------------------------- |
+| `sub`            | Google 側で一意のユーザー ID           |
+| `name`           | フルネーム                         |
+| `given_name`     | 名                             |
+| `family_name`    | 姓                             |
+| `picture`        | プロフィール画像 URL                  |
+| `email`          | メールアドレス                       |
+| `email_verified` | メールが認証済みかどうか (`true`/`false`) |
+| `locale`         | ロケール（例: `ja`）                 |
+
+
+
 ---
 
 ## ✅ 認証フロー概要（OIDC対応）
