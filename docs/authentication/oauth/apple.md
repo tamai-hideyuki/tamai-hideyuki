@@ -6,7 +6,7 @@
 
 - エンドポイント
 **ユーザー情報用の明示的な userinfo API はなく、 まずトークン取得後に ID トークン (JWT) をデコードして情報を取得します。**
-```text
+```bash
 POST https://appleid.apple.com/auth/token
 ```
 - 主なクエリパラメーター（すべて必須）

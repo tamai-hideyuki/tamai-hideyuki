@@ -7,7 +7,7 @@
 
 
 - エンドポイント
-```text
+```bash
 GET https://www.googleapis.com/oauth2/v3/userinfo
 ```
 - 主なクエリパラメーター（すべて必須）
