@@ -76,4 +76,4 @@ openid email name
 - Apple OAuth は JWT署名など特有の実装が必要
 - ユーザー情報は初回の認証時のみ取得可能
 - 認証後は ID Token (JWT) を解析し、subを利用
-- 実装例は [apple.php](../auth-flow-examples/apple.php) を参照
+- Laravel Socialite での実装例は [apple.php](../auth-flow-examples/apple.php) を参照
