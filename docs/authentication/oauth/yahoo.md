@@ -42,11 +42,11 @@ GET https://userinfo.yahooapis.jp/yconnect/v2/attribute
 
 #### 「エンドポイント」「クエリ／パラメーター」「レスポンス」「フィールド仕様」が確認できる公式ドキュメントまとめ
 
-- [ユーザー情報取得 API (/yconnect/v2/attribute)](https://developer.yahoo.co.jp/yconnect/v2/api/userinfo.html)
+- [ユーザー情報取得 API (/yconnect/v2/attribute)](https://developer.yahoo.co.jp/yconnect/v2/authorization_code/authorization.html)
 
-- [トークン取得 API (/yconnect/v2/token)](https://developer.yahoo.co.jp/yconnect/v2/api/token.html)
+- [トークン取得 API (/yconnect/v2/token)]()
 
-- [OIDC Discovery（.well-known 情報）](https://auth.login.yahoo.co.jp/yconnect/.well-known/openid-configuration)
+- [OIDC Discovery（.well-known 情報）]()
 
 ---
 ## 認証フローの概要
