@@ -57,6 +57,15 @@ POST https://openapi.alipay.com/gateway.do
 | `nick_name` | ニックネーム              |
 | `avatar`    | プロフィール画像の URL       |
 
+#### 「エンドポイント」「クエリ／パラメーター」「レスポンス」「フィールド仕様」が確認できる公式ドキュメントまとめ
+
+- [アクセストークン取得 (method=alipay.system.oauth.token)](https://opendocs.alipay.com/apis/api_9/alipay.system.oauth.token)
+
+- [ユーザー情報取得 (method=alipay.user.info.share)](https://opendocs.alipay.com/apis/api_2/alipay.user.info.share)
+
+- [Gateway 全体仕様](https://opendocs.alipay.com/common/02kh7h)
+- [Gateway 署名ルール](https://opendocs.alipay.com/common/02kf5q)
+
 ---
 
 ## ✅ 認証フロー概要

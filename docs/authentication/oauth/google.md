@@ -43,6 +43,12 @@ GET https://www.googleapis.com/oauth2/v3/userinfo
 | `locale`         | ロケール（例: `ja`）                 |
 
 
+#### 「エンドポイント」「クエリ／パラメーター」「レスポンス」「フィールド仕様」が確認できる公式ドキュメントまとめ
+- [userinfo エンドポイント & パラメーター & レスポンス例](https://developers.google.com/identity/protocols/oauth2/openid-connect#obtainuserinfo)
+
+- [パラメーター詳細（Authorization ヘッダー）](https://openid.net/specs/openid-connect-core-1_0.html#UserInfoRequest)
+
+- [レスポンス／クレーム一覧](https://openid.net/specs/openid-connect-core-1_0.html#UserInfoResponse)
 
 ---
 

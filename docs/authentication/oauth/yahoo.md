@@ -40,6 +40,14 @@ GET https://userinfo.yahooapis.jp/yconnect/v2/attribute
 | `email_verified` | メールが認証済みかどうか (`true`/`false`) |
 | `nickname`       | ニックネーム                        |
 
+#### 「エンドポイント」「クエリ／パラメーター」「レスポンス」「フィールド仕様」が確認できる公式ドキュメントまとめ
+
+- [ユーザー情報取得 API (/yconnect/v2/attribute)](https://developer.yahoo.co.jp/yconnect/v2/api/userinfo.html)
+
+- [トークン取得 API (/yconnect/v2/token)](https://developer.yahoo.co.jp/yconnect/v2/api/token.html)
+
+- [OIDC Discovery（.well-known 情報）](https://auth.login.yahoo.co.jp/yconnect/.well-known/openid-configuration)
+
 ---
 ## 🔐 認証フローの概要
 ```mermaid

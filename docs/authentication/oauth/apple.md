@@ -42,6 +42,13 @@ POST https://appleid.apple.com/auth/token
 | `email_verified`   | メールが認証済みかどうか (`true`/`false`)      |
 | `is_private_email` | Relay メールアドレスかどうか (`true`/`false`) |
 
+#### 「エンドポイント」「クエリ／パラメーター」「レスポンス」「フィールド仕様」が確認できる公式ドキュメントまとめ
+
+- [トークン取得（/auth/token）エンドポイント・パラメーター・レスポンス](https://developer.apple.com/documentation/sign_in_with_apple/sign_in_with_apple_rest_api)
+
+- [ID トークン（JWT）クレーム一覧](https://developer.apple.com/documentation/sign_in_with_apple/id_tokens)
+
+- [OIDC Discovery（.well-known 情報）](https://appleid.apple.com/.well-known/openid-configuration)
 
 ---
 ## ✅ 認証フロー概要
