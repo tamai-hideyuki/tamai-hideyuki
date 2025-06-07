@@ -51,22 +51,67 @@ Location: https://example.org/cb?code=SxlOBeZQ&state=af0ifjsldkj
 
 ---
 ## 認証フローの概要
+
+## クライアントサイドアプリ用（Client-side Flow）
 ```mermaid
 sequenceDiagram
-    participant User
-    participant Browser
-    participant YourApp
-    participant Yahoo
+    participant User as ユーザー
+    participant ClientApp as クライアントサイドアプリ
+    participant Yahoo as Yahoo! ID連携
+    participant API as UserInfoその他のWeb API
 
-    User->>Browser: 「Yahoo! でログイン」ボタン
-    Browser->>YourApp: /auth/yahoo/redirect
-    YourApp->>Yahoo: 許可リクエスト
-    Yahoo->>User: Yahoo! JAPAN ログイン画面
-    User->>Yahoo: 認証 と 許可
-    Yahoo->>YourApp: 許可コード を返却
-    YourApp->>Yahoo: トークン取得
-    YourApp->>Yahoo: userinfo API で情報取得
-    Yahoo-->>YourApp: ユーザー情報 JSON
+    User->>ClientApp: アプリ起動
+    ClientApp->>Yahoo: OpenID Configuration Endpoint
+    Yahoo-->>ClientApp: OpenID設定を返却
+
+    User->>Yahoo: 認証開始（リダイレクト）
+    Yahoo-->>User: 認証/同意画面を表示
+    User-->>Yahoo: 認証・同意
+    Yahoo-->>ClientApp: Authorization Code付きでredirect_uriにリダイレクト
+
+    ClientApp->>Yahoo: Token EndpointへAuthorization Codeを送信
+    Yahoo-->>ClientApp: Access Token / Refresh Token / ID Token
+
+    ClientApp->>Yahoo: JWKS/Public Key取得（ID Token検証）
+    Yahoo-->>ClientApp: 公開鍵
+    ClientApp->>ClientApp: ID Token検証
+
+    ClientApp->>API: Access TokenでWeb APIリクエスト
+    API-->>ClientApp: APIレスポンス
+
+    ClientApp->>Yahoo: Refresh Tokenで新たなAccess Tokenを要求
+    Yahoo-->>ClientApp: 新しいAccess Tokenを発行
+
+```
+## サーバーサイドアプリ用（Server-side Flow）
+```mermaid
+sequenceDiagram
+  participant User as ユーザー
+  participant ServerApp as サーバーサイドアプリ
+  participant Yahoo as Yahoo! ID連携
+  participant API as UserInfoその他のWeb API
+
+  ServerApp->>Yahoo: OpenID Configuration Endpoint
+  Yahoo-->>ServerApp: OpenID設定を返却
+
+  User->>Yahoo: 認証開始（リダイレクト）
+  Yahoo-->>User: 認証/同意画面を表示
+  User-->>Yahoo: 認証・同意
+  Yahoo-->>ServerApp: Authorization Code付きでredirect_uriにリダイレクト
+
+  ServerApp->>Yahoo: Token EndpointへAuthorization Code送信（Basic認証付き）
+  Yahoo-->>ServerApp: Access Token / Refresh Token / ID Token
+
+  ServerApp->>Yahoo: JWKS/Public Key取得（ID Token検証）
+  Yahoo-->>ServerApp: 公開鍵
+  ServerApp->>ServerApp: ID Token検証
+
+  ServerApp->>API: Access TokenでWeb APIリクエスト
+  API-->>ServerApp: APIレスポンス
+
+  ServerApp->>Yahoo: Refresh TokenでAccess Token更新（Basic認証付き）
+  Yahoo-->>ServerApp: 新しいAccess Tokenを返却
+
 ```
 
 
