@@ -7,38 +7,41 @@
 
 - エンドポイント
 ```bash
-GET https://userinfo.yahooapis.jp/yconnect/v2/attribute
+GET https://auth.login.yahoo.co.jp/yconnect/v2/authorization
 ```
-- 主なクエリパラメーター（すべて必須）
+- 主なクエリパラメーター（すべて必須ではないが重要）
 
-| パラメーター          | 内容                                              |
-| --------------- | ----------------------------------------------- |
-| `Authorization` | `Bearer {access_token}`（ログインユーザーから取得したアクセストークン） |
+| パラメーター名                 | 必須 | 説明                                                        |
+| ----------------------- | -- | --------------------------------------------------------- |
+| `response_type`         | ○  | `"code"` を指定（認可コードグラント用）                                  |
+| `client_id`             | ○  | アプリケーションの Client ID                                       |
+| `redirect_uri`          | ○  | 事前登録済みのリダイレクトURIと**完全一致**している必要あり                         |
+| `scope`                 | ○  | アクセス要求する情報（例：`openid profile email`）                      |
+| `state`                 | △  | CSRF対策。ランダムな文字列を発行して検証必須                                  |
+| `nonce`                 | △  | リプレイアタック対策。ID Token に含まれて返る                               |
+| `display`               | ×  | 表示形式（`page`, `touch`, `popup`, `inapp`）                   |
+| `prompt`                | ×  | `consent`, `login`, `select_account`, `none` などのアクション強制設定 |
+| `max_age`               | ×  | 最大認証経過時間（秒単位）。例：3600                                      |
+| `code_challenge`        | △  | PKCE用：`code_verifier` から導出したチャレンジコード                      |
+| `code_challenge_method` | △  | `S256` または `plain`（推奨は `S256`）                            |
+| `bail`                  | ×  | `bail=1` で同意拒否時のリダイレクト先を明示                                |
+
+
+
 
 - レスポンス（正常時）
-```json
-{
-  "sub": "abcdefghijk1234567890",
-  "name": "山田 太郎",
-  "given_name": "太郎",
-  "family_name": "山田",
-  "email": "example@yahoo.co.jp",
-  "email_verified": true,
-  "nickname": "taro_y"
-}
+```http
+HTTP/1.1 302 Found
+Location: https://example.org/cb?code=SxlOBeZQ&state=af0ifjsldkj
 ```
 
 - フィールド一覧
 
-| フィールド名           | 内容                            |
-| ---------------- | ----------------------------- |
-| `sub`            | Yahoo! JAPAN 側で一意のユーザー ID     |
-| `name`           | フルネーム                         |
-| `given_name`     | 名                             |
-| `family_name`    | 姓                             |
-| `email`          | メールアドレス                       |
-| `email_verified` | メールが認証済みかどうか (`true`/`false`) |
-| `nickname`       | ニックネーム                        |
+| フィールド名  | 必須 | 説明                                 |
+| ------- | -- | ---------------------------------- |
+| `code`  | ○  | 認可コード（ユーザーが同意した場合のみ付与）             |
+| `state` | △  | リクエスト時に送信した `state` 値（CSRF対策のため照合） |
+
 
 #### 「エンドポイント」「クエリ／パラメーター」「レスポンス」「フィールド仕様」が確認できる公式ドキュメントまとめ
 
