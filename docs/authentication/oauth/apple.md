@@ -1,6 +1,6 @@
 # Apple OAuth (Sign in with Apple) の仕様と実装ポイント
 
-## 🔍 概要
+## 概要
 - "Sign in with Apple" は、Apple ID を使ってアプリケーションやウェブサービスに安全にログインできる仕組みです。
 - OAuth 2.0 および OpenID Connect (OIDC) をベースとしていますが、他のプロバイダと異なり、JWT署名によるクライアントシークレット生成や、初回ログイン時のみ取得可能なユーザー情報など、Apple特有の仕様があります。
 
@@ -51,7 +51,7 @@ POST https://appleid.apple.com/auth/token
 - [OIDC Discovery（.well-known 情報）](https://appleid.apple.com/.well-known/openid-configuration)
 
 ---
-## ✅ 認証フロー概要
+## 認証フロー概要
 
 ```mermaid
 sequenceDiagram
@@ -70,7 +70,7 @@ sequenceDiagram
     Apple-->>YourApp: access_token, id_token (JWT)
     YourApp-->>User: ログイン成功
 ```
-## ⚙️ OAuth 2.0 基本構成
+## OAuth 2.0 基本構成
 
 | 項目   | 　値                                       |
 |------|------------------------------------------|
@@ -79,7 +79,7 @@ sequenceDiagram
 |    OIDC Discovery  |    https://appleid.apple.com/.well-known/openid-configuration  |
 
 
-## ὑ1 必須スコープ
+## 必須スコープ
 ```text
 openid email name
 ```
@@ -87,7 +87,7 @@ openid email name
 - name: ユーザーの氏名（初回のみ返る）
 - ※ 2回目以降は sub（Apple ユーザーIDとして一意な値、ID token に含まれる）のみ
 
-## 📄 ID Token (JWT) の例
+## ID Token (JWT) の例
 ```text
 {
   "iss": "https://appleid.apple.com",
@@ -104,7 +104,7 @@ openid email name
 - email_verified: 認証済メール
 - is_private_email: リレーメールアドレスかどうか
 
-## 🔒 client_secret (自己署名 JWT)
+## client_secret (自己署名 JWT)
 **Apple OAuth では client_secret を JWT で自己署名する必要があります:**
 - 診断情報:
   - iss: Apple Developer チームID (team_id)
@@ -113,13 +113,13 @@ openid email name
   - sub: client_id
 - 署名: ES256 (非同期化鍵)
 
-## ⚠️ 注意点
+## 注意点
 - 初回のログインでしか email や name は取得できない
 - 2回目以降は ID Token から sub を認証IDとして利用
 - リレーメールアドレスの場合、email は Apple 側のプロキシーメール
 - Apple 側による email relay を利用したい場合は DNS/SPF 設定も要検討
 
-## 🔹 まとめ
+## まとめ
 - Apple OAuth は JWT署名など特有の実装が必要
 - ユーザー情報は初回の認証時のみ取得可能
 - 認証後は ID Token (JWT) を解析し、subを利用

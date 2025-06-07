@@ -1,6 +1,6 @@
 # Google OAuth 2.0 + OIDC の仕様と実装ポイント
 
-## 🔍 概要
+## 概要
 
 - Google の OAuth 2.0 認証は、OpenID Connect (OIDC) に準拠しており、安全かつ柔軟なログイン機構を提供します。
 - Laravelでは Socialite を使うことで簡単に統合可能です。
@@ -52,7 +52,7 @@ GET https://www.googleapis.com/oauth2/v3/userinfo
 
 ---
 
-## ✅ 認証フロー概要（OIDC対応）
+## 認証フロー概要（OIDC対応）
 
 ```mermaid
 sequenceDiagram
@@ -73,7 +73,7 @@ sequenceDiagram
     YourApp-->>User: ログイン完了
 ```
 
-## ⚙️ エンドポイント一覧
+## エンドポイント一覧
 
 | 種別             | エンドポイント                                                        |
 | -------------- | -------------------------------------------------------------- |
@@ -82,14 +82,14 @@ sequenceDiagram
 | ユーザー情報取得       | `https://www.googleapis.com/oauth2/v3/userinfo`                |
 | OIDC Discovery | `https://accounts.google.com/.well-known/openid-configuration` |
 
-## 🛠 必要スコープ
+## 必要スコープ
 ```text
 openid email profile
 ```
 - openid は OIDC の必須スコープ
 - email や profile を使うことで、メールや名前、アイコンなどを取得
 
-## 📄 ID Token (JWT)
+## ID Token (JWT)
 
 - Google OAuth 2.0 では access_token に加えて ID token (JWT) が付与されます。
 ```text
@@ -107,13 +107,13 @@ openid email profile
 - iss: 発行元
 - email_verified: メール認証状態
 
-## ⚠️ 評価・注意点
+## 評価・注意点
 - redirect_uriは Google Developer Console に登録したものと完全に一致すること
 - state は CSRF 対策のため必ず利用
 - email_verified を確認することで成りすまし防止
 - ゲストユーザーの情報は ID Token に含まれない場合もあるので userinfo API と一緒に利用する
 
-## 🔹 まとめ
+## まとめ
 - Google OAuth 2.0 は OIDC 対応で安全で操作も簡単
 - ID Token は JWT形式で利用可能
 - userinfo API や scope の利用により、詳細な情報を取得

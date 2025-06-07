@@ -1,6 +1,6 @@
 # Alipay 中国向け OAuth の特徴
 
-## 🔍 概要
+## 概要
 - Alipay（支付宝）は中国最大級の決済プラットフォームであり、OAuth 2.0 による外部サービス認証機能を提供しています。
 - ただし、AlipayのOAuthはREST形式ではなく、独自仕様のAPI構造（methodパラメータ形式）と署名付きリクエストによって処理されるのが特徴です。 
 - 他のプロバイダ（Google, Appleなど）と比較して、実装には独自ロジックが必要となります。
@@ -68,7 +68,7 @@ POST https://openapi.alipay.com/gateway.do
 
 ---
 
-## ✅ 認証フロー概要
+## 認証フロー概要
 ```mermaid
 sequenceDiagram
     participant User
@@ -87,7 +87,7 @@ sequenceDiagram
     Alipay-->>YourApp: プロファイルJSON
 ```
 
-## ⚙️ OAuth 基本構成
+## OAuth 基本構成
 
 - 認可URL:
 ```text
@@ -106,7 +106,7 @@ method=alipay.user.info.share
 
 ```
 
-## 📄 トークン取得リクエスト
+## トークン取得リクエスト
 
 - 必須パラメータ
 
@@ -124,7 +124,7 @@ method=alipay.user.info.share
 
 >リクエストは application/x-www-form-urlencoded 形式でPOST送信
 
-## 📄 ユーザ情報 (alipay.user.info.share)
+## ユーザ情報 (alipay.user.info.share)
 ```text
 {
   "alipay_user_info_share_response": {
@@ -145,18 +145,18 @@ method=alipay.user.info.share
 - user_name, nick_name: 名前
 - avatar: プロファイル画像URL
 
-## 🔐 署名ロジック
+## 署名ロジック
 **Alipay の API は、クエリパラメータの全体を RSA2 で署名する必要があります。**
 1. メソッド名を method=xxx の形式で配列
 2. 値を URL エンコード せずに組み立て
 3. 全体を 自分の私鍵 (PKCS#8) でRSA2署名
 
-## ⚠️ 注意点
+## 注意点
 - Alipay OAuth は Socialite 本体は未搭載。自作必須
 - トークンや情報APIは gateway.do に統一されており、method で分岐
 - ローカル開発者の場合、Alipay Global や港澳版とは別パートナーを使用
 
-## 🔹 まとめ
+## まとめ
 - Alipay OAuth は独自組みの OAuth + 署名ロジック
 - API は gateway.do 統一端点
 - 認証後は alipay.user.info.share でプロファイル情報を取得
