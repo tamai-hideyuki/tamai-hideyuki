@@ -158,11 +158,12 @@ Docker × Laravel ×認証設計 ×CLI自動化 ×リアルタイムモーショ
 
 ## 🌐 Web & PWA
 
-| リポジトリ名                                                       | 説明                                                                                                           |
-|------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------|
-| [main](https://github.com/tamai-hideyuki/main.git)               | オフライン⇔オンライン自動切替・IndexedDB連携のPWA実験環境                                                              |
+| リポジトリ名                                                             | 説明                                                                                                           |
+|--------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------|
+| [main](https://github.com/tamai-hideyuki/main.git)                 | オフライン⇔オンライン自動切替・IndexedDB連携のPWA実験環境                                                              |
 | [qr-generator](https://github.com/tamai-hideyuki/qr-generator.git) | 任意のURLからQRコードを生成し、ダウンロード可能にするWeb+PWAアプリ                                                       |
-| [php-chatgpt](https://github.com/tamai-hideyuki/chat-php-gpt.git)    | 純粋 PHP のみで動作する「ChatGPT風チャットボット」。セッション管理＋ファイルログで会話を永続化し、“考え中…”演出やキーワード抽出による文脈参照などの工夫を凝らした Web アプリ |
+| [php-chatgpt](https://github.com/tamai-hideyuki/chat-php-gpt.git)  | 純粋 PHP のみで動作する「ChatGPT風チャットボット」。セッション管理＋ファイルログで会話を永続化し、“考え中…”演出やキーワード抽出による文脈参照などの工夫を凝らした Web アプリ |
+| [recrui-track](https://github.com/tamai-hideyuki/recrui-track.git)                                                   |転職活動を可視化・管理する自己管理PWAツール。現在は最小構成として「ToDoリスト機能」のみを実装し、Next.js + Hono + Drizzle + Supabase による構成で運用。DDD（ドメイン駆動設計）とクリーンアーキテクチャをベースに、今後は企業・面接管理やSlack連携、AI分析機能の拡張を予定。|
 
 ---
 
