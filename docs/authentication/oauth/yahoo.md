@@ -44,9 +44,7 @@ GET https://userinfo.yahooapis.jp/yconnect/v2/attribute
 
 - [ユーザー情報取得 API (/yconnect/v2/attribute)](https://developer.yahoo.co.jp/yconnect/v2/authorization_code/authorization.html)
 
-- [トークン取得 API (/yconnect/v2/token)]()
-
-- [OIDC Discovery（.well-known 情報）]()
+- [トークン取得 フロー (/yconnect/v2/token)](https://developer.yahoo.co.jp/yconnect/v2/authorization_code/)
 
 ---
 ## 認証フローの概要
