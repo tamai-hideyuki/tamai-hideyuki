@@ -1,4 +1,4 @@
-#### [学習内容まとめ](docs/learning-journal.md)
+#### [資料](docs/learning-journal.md)
 #### [English ☞](./docs/README.en.md)
 
 # Tamai Hideyuki — Repository Snapshot

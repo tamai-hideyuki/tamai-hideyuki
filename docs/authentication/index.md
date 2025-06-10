@@ -2,7 +2,7 @@
 
 ## 概要
 
-このリポジトリは、主要なオンラインサービス（Google, Apple, Yahoo! JAPAN, Alipay）におけるOAuth認証フローと、認証後にユーザー情報を取得するためのAPIエンドポイントおよびその仕様について、まとめたドキュメント群です。
+このリポジトリは、主要なオンラインサービス（Google, Apple, Yahoo! JAPAN, Alipay, Facebook）におけるOAuth認証フローと、認証後にユーザー情報を取得するためのAPIエンドポイントおよびその仕様について、まとめたドキュメント群です。
 
 ## 目的
 
@@ -19,21 +19,6 @@
 * **アクセストークンとリフレッシュトークンの詳細**: 有効期限や使用上の注意点。
 * **エラーハンドリング**: 発生しうる一般的なエラーとその対応方法。
 
-## ディレクトリ構造
+#### 
 
-```text
-.
-├── index.md                 // このファイル
-└── oauth/                     // 各プロバイダの詳細ドキュメント
-     ├── google.md       // Google OAuth認証とユーザー情報取得に関する情報
-     ├── apple.md        // Apple Sign in with Apple認証とユーザー情報取得に関する情報
-     ├── yahoo.md        // Yahoo! JAPAN ID連携とユーザー情報取得に関する情報
-     └── alipay.md       // Alipay OAuth認証とユーザー情報取得に関する情報
-```
-
-#### 各ファイルへ ☞
-
-- [`google.md`](./oauth/google.md)
-- [`apple.md`](./oauth/apple.md)
-- [`yahoo.md`](./oauth/yahoo.md)
-- [`alipay.md`](./oauth/alipay.md)
+### 各詳細ファイル ☞  [`Google`](./oauth/google.md) - [`Apple`](./oauth/apple.md) - [`Yahoo!JAPAN`](./oauth/yahoo.md) - [`Alipay`](./oauth/alipay.md) - [`Facebook`](./oauth/facebook.md)
