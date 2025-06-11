@@ -1,3 +1,4 @@
+### [ ⏎ 戻る](../index.md)
 # Apple Sign in with Apple認証とユーザー情報取得
 
 ## OAuth認証フロー
@@ -6,105 +7,114 @@
 
 ```mermaid
 sequenceDiagram
-    participant User
-    participant ClientApp as Client Application
-    participant AppleAuth as Apple Authorization Server
-    participant YourServer as Your Server
+  actor User
+  participant Site as webサイト
+  participant AppleAuth as Apple ID Server
+  participant Res as 任意バックエンドDB
 
-    User->>ClientApp: 1. ログイン/Sign in with Apple開始
-    ClientApp->>AppleAuth: 2. 認可リクエスト (client_id, redirect_uri, scope, response_type=code, state, response_mode)
-    AppleAuth->>User: 3. 認証・同意画面表示
-    User-->>AppleAuth: 4. 認証・同意 (許可)
-    AppleAuth->>YourServer: 5. リダイレクト (認可コード, state, id_token) (response_mode=form_postの場合)
-    YourServer->>AppleAuth: 6. トークンリクエスト (client_id, client_secret[JWT], code, grant_type=authorization_code, redirect_uri)
-    AppleAuth->>YourServer: 7. トークン応答 (access_token, expires_in, id_token, refresh_token, token_type)
-    YourServer->>YourServer: 8. id_tokenを検証し、ユーザー情報を抽出
-    YourServer->>ClientApp: 9. ログイン成功/ユーザー情報提供
+  User->>Site: ① 「Appleでサインイン」
+  Site->>AppleAuth: ② /authorize?scope=name+email
+  AppleAuth-->>User: ③ 生体認証 or ID/PW ✚ 同意
+  User->>AppleAuth: ④ 認証+同意
+  AppleAuth-->>Site: ⑤ 302 ← ?code=AUTH_CODE
+  Site->>AppleAuth: ⑥ /token (code, client_secret JWT)
+  AppleAuth-->>Site: ⑦ id_token + access_token [+refresh]
+  Site->>Res: ⑧ DB更新／API呼び出し
+  Res-->>Site: ⑨ 結果
+  Site-->>User: ⑩ 画面表示
+  Note over AppleAuth: リフレッシュトークンは\nパスワード変更などで失効
+
 ```
+---
+### ログインしているユーザーIDを安全に取得するための、最も推奨される、そして最終的に最も確実なステップ
 
-## エンドポイントと主なクエリパラメータ
+#### [ユーザーID取得方法へ](../allowed-code-flows/apple_user_id.md)
 
-- 認可エンドポイント
-  - URL: https://appleid.apple.com/auth/authorize
-  - HTTPメソッド: GET
-  - 主な必須クエリパラメータ:
-    - client_id: サービスID（com.example.service のような形式）
-    - redirect_uri: 認証後にユーザーがリダイレクトされるURL。Apple Developer Consoleで設定したものと一致する必要があります。
-    - response_type: code を指定。
-    - scope: name と email をスペース区切りで指定できます。例: name email。
-    - state: CSRF攻撃を防ぐための任意の文字列。
-    - response_mode: form_post (推奨、POSTリクエストで認可コードとIDトークンを返却) または query (GETリクエストで返却)。
-- トークンエンドポイント
-  - URL: https://appleid.apple.com/auth/token
-  - HTTPメソッド: POST
-  - 主な必須リクエストボディパラメータ (application/x-www-form-urlencoded):
-    - client_id: サービスID。
-    - client_secret: 生成されたJWT (JSON Web Token) のクライアントシークレット。
-    - code: 認可エンドポイントから取得した認可コード。
-    - grant_type: authorization_code (認可コードを交換する場合) または refresh_token (リフレッシュトークンで新しいアクセストークンを取得する場合)。
-    - redirect_uri: 認可エンドポイントで使用したものと同じリダイレクトURI。
-
-## レスポンス（正常時）
-
-- トークンエンドポイントへのリクエストが成功すると、以下の情報を含むJSON形式のレスポンスが返されます。
-
-```json
-{
-  "access_token": "a_valid_access_token",
-  "expires_in": 3600,
-  "id_token": "a_valid_id_token.jwt.string",
-  "refresh_token": "a_valid_refresh_token",
-  "token_type": "Bearer"
-}
-```
-- access_token: APIリクエストに用いるアクセストークン（短命）。
-- expires_in: アクセストークンの有効期間（秒）。
-- id_token: ユーザーの認証情報と基本プロファイル情報を含むJWT。
-- refresh_token: 新しいアクセストークンを取得するためのリフレッシュトークン。
-- token_type: トークンの種類。
-
-## ユーザー情報取得APIエンドポイントと仕様概要
-
-- **AppleのSign in with Appleでは、ユーザーのプロファイル情報（名前、メールアドレス）は主にid_token（JWT）から取得します。専用のユーザー情報取得APIエンドポイントは提供されていません。**
-  - id_tokenに含まれるクレーム
-  - id_tokenはJWT形式であり、そのペイロードには以下のクレームが含まれます。
-
-|クレーム名|	概要|	備考|
-|---|---|---|
-|iss|	発行者 (Issuer)。https://appleid.apple.com||
-|sub|	サブジェクト (Subject)。Appleが提供するユーザーの一意な識別子。この値がユーザーを識別するための唯一の永続的な識別子です。||
-|aud|	オーディエンス (Audience)。サービスID（client_id）||
-|exp|	有効期限 (Expiration Time)。JWTの有効期限（Unix時間）。||
-|iat|	発行時間 (Issued At)。JWTが発行された時間（Unix時間）。||
-|email|	ユーザーのメールアドレス。|	ユーザーが「メールを非公開」を選択した場合、Appleが生成したプライベートリレーメールアドレス（@privaterelay.appleid.comドメイン）が提供されます。|
-|email_verified|	メールアドレスが検証済みであるかを示すブーリアン値。||
-|is_private_email|	提供されたメールアドレスがプライベートリレーメールアドレスであるかを示すブーリアン値。||
-|auth_time|	認証時間。ユーザーがAppleに認証された時間（Unix時間）。||
-|name|	ユーザーの名前。JSONオブジェクトでfirstNameとlastNameを含む。|	重要: nameクレームは、初回認証時にのみscope=nameが指定された場合にのみ提供されます。2回目以降の認証では、ユーザーが名前を更新してもこのクレームは提供されません。アプリケーションは初回認証時に名前を取得し、サーバー側で保存する必要があります。|
-
-
-## アクセストークンとリフレッシュトークン
-
-- アクセストークン: 短命で、APIリクエストの認証に使用されます。具体的な有効期限は明示されていませんが、id_tokenのexpクレームで示される有効期限を参考に検証します。
-- リフレッシュトークン: 長期間有効ですが、ユーザーがアクセスの取り消しを行ったり、パスワードを変更したりすると無効になる可能性があります。リフレッシュトークンの検証は、最低でも1日1回行うことが推奨されています。
-
-## エラーハンドリング
-
-- トークン交換などのAPI呼び出しでエラーが発生した場合、以下のフィールドを含むJSON形式のレスポンスが返されます。
-```json
-{
-  "error": "error_code",
-  "error_description": "human_readable_description"
-}
-```
-- 一般的なエラーコード:
-  - invalid_request: リクエストパラメータが無効または不足している。
-  - invalid_client: クライアント認証に失敗した。
-  - invalid_grant: 認可コードが無効、期限切れ、またはすでに使用済みである。
-  - unauthorized_client: クライアントが指定された認証フローを使用する権限がない。
-  - unsupported_grant_type: サポートされていないグラントタイプが指定された。
-  - invalid_scope: リクエストされたスコープが無効または不正である。
 
 ---
+## webサイトからサーバーに向けて打つAPIの回数
 
-## [OAuth認証におけるエンドポイント、主なクエリパラメーター、およびレスポンスを確認できる公式ドキュメントへ ☞](https://developer.apple.com/documentation/signinwithapple)
+- 回数：2 回
+
+## それぞれのAPIのエンドポイントと正常時のレスポンス
+
+## GET https://appleid.apple.com/auth/authorize
+
+### 用途：
+- ユーザーを Apple IDのログイン＋同意画面 にリダイレクトする
+- 認可コード (code) と IDトークン (id_token) を取得するための第一段階
+
+### 必要なパラメータ（URLクエリ）
+
+| 要素                            | 説明                                               |
+| ----------------------------- | ------------------------------------------------ |
+| `client_id`                   | Services ID（Apple Developer Portal で発行されたアプリ識別子） |
+| `redirect_uri`                | 認可後に `code` 等を返すコールバック URL（事前登録済み）               |
+| `response_type=code id_token` | 認可コードと IDトークンの両方を要求する固定値                         |
+| `scope=name email`            | 取得するユーザー情報の範囲（フルネームとメールアドレス）                     |
+| `response_mode=form_post`     | 結果を HTTP POST ボディで返す指定（省略時はURLクエリ）               |
+| `state`                       | CSRF 攻撃を防ぐランダム文字列                                |
+| `nonce`                       | `id_token` の正当性検証用ランダム文字列                        |
+
+
+
+### 認可エンドポイントからの リダイレクト／POST レスポンス(/auth/authorize)
+- ステータス：
+  - 302 Found＋HTML自動 POST フォーム返却
+- 送信方式：
+  - response_mode=form_post 設定時：
+    - Appleサーバーが <form method="post" action="redirect_uri"> を返し、自動的に POST 実行
+  - （省略時は URL クエリでの 302 リダイレクト）
+- 返却パラメータ（POST body）：
+  - code：認可コード
+  - id_token：JWT（ユーザー ID や email を含む）
+  - state：CSRF 用文字列
+  - user：初回のみ <JSON> 形式で { name:{…}, email:… }
+
+- エラー時（POST body）：
+```text
+error=access_denied
+error_description=The+user+denied+authorization
+state=...
+```
+- 注)：
+  - クライアントは必ずフォーム POST の受信を許可し、URLでトークンを漏洩させないこと
+  - user 情報は初回のみ。永続的に保存すること。
+
+
+---
+## POST https://appleid.apple.com/auth/token
+
+### 用途：
+- 認可コード（code）を使って access_token, refresh_token, id_token を取得
+
+
+
+## 必要なパラメータ（POST body, application/x-www-form-urlencoded）
+
+```json
+{
+  "access_token": "...",   // Apple API 呼び出し用の短命トークン
+  "expires_in": 3600,      // access_token の有効期間（秒）
+  "token_type": "Bearer",
+  "refresh_token": "...",  // パスワード変更等イベントでのみ失効する長命トークン
+  "id_token": "..."        // JWT (ユーザーID, email などを内包)
+}
+```
+
+- **補足：id_token の中身（デコード例）**
+```json
+{
+"iss": "https://appleid.apple.com",
+"sub": "000000.abcde12345",         // Apple 内でアプリ＋ユーザーを一意に識別
+"aud": "com.example.app",
+"email": "user@privaterelay.appleid.com",
+"email_verified": "true",
+"auth_time": 1680000000,
+"nonce_supported": true
+}
+```
+- 初回ログイン時のみ、user フィールドに name と email 情報が含まれる（再取得不可）。
+- /userinfo相当の API は存在せず、IDトークンをデコードして取得する。
+
+### [ ⏎ 戻る](../index.md)
