@@ -120,6 +120,21 @@ Docker × Laravel ×認証設計 ×CLI自動化 ×リアルタイムモーショ
 将来的には、設計・実装だけでなく、プロダクト全体の品質や成長に関わる意思決定にも貢献できるよう、エンジニアとしての視座と影響範囲を広げていくことを目指しています。
 
 
+'''ts
+// Magic pattern of resilience
+function designSystem() {
+  while (true) {
+    try {
+      executeCoreLogic();
+    } catch (failure) {
+      logInsight(failure);
+      recoverGracefully();
+      evolveArchitecture();
+    }
+  }
+}
+'''
+
 ---
 ## 🔐 認証・認可（Authentication / Authorization）
 
