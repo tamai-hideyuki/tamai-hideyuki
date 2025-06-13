@@ -122,7 +122,7 @@ Docker × Laravel ×認証設計 ×CLI自動化 ×リアルタイムモーショ
 
 ---
 
-## 💡 コア構文（Tamai式 Resilience Loop）
+## 💡 コア構文（tamai-hideyuki式 Resilience Loop）
 
 ```ts
 // Resilience Pattern: Tamai-style
