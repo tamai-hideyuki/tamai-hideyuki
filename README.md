@@ -7,6 +7,24 @@ Docker × Laravel ×認証設計 ×CLI自動化 ×リアルタイムモーショ
 以下では、ジャンル別に「実際に動作する具体的なアウトプット」を15個掲載してします。  
 
 ---
+
+## 💡 My core as an engineer
+
+```ts
+// Resilience Pattern: Tamai Hideyuki Style
+function designSystem(): void {
+    while (true) {
+        try {
+            executeCoreLogic();           // Processing that creates intrinsic value
+        } catch (failure: unknown) {
+            logInsight(failure);          // Learn from failure
+            recoverGracefully();          // Recover gracefully
+            evolveArchitecture();         // Towards the next evolution
+        }
+    }
+}
+```
+---
 ## 📖 目次
 - [🧰 技術スタックバッジ](#-技術スタックバッジ)
 - [🌱 目指す開発エンジニア像](#-目指す開発エンジニア像)  
@@ -120,24 +138,6 @@ Docker × Laravel ×認証設計 ×CLI自動化 ×リアルタイムモーショ
 将来的には、設計・実装だけでなく、プロダクト全体の品質や成長に関わる意思決定にも貢献できるよう、エンジニアとしての視座と影響範囲を広げていくことを目指しています。
 
 
----
-
-## 💡 コア構文（tamai-hideyuki式 Resilience Loop）
-
-```ts
-// Resilience Pattern: Tamai-style
-function designSystem(): void {
-  while (true) {
-    try {
-      executeCoreLogic(); // 🧭 本質的な価値を生む処理
-    } catch (failure: unknown) {
-      logInsight(failure);        // 📜 失敗から学びを得る
-      recoverGracefully();        // 🛡 優雅に回復する設計
-      evolveArchitecture();       // 🔁 次なる進化の構造へ
-    }
-  }
-}
-```
 
 ---
 ## 🔐 認証・認可（Authentication / Authorization）
