@@ -120,20 +120,23 @@ Docker × Laravel ×認証設計 ×CLI自動化 ×リアルタイムモーショ
 将来的には、設計・実装だけでなく、プロダクト全体の品質や成長に関わる意思決定にも貢献できるよう、エンジニアとしての視座と影響範囲を広げていくことを目指しています。
 
 
-'''ts
-// Magic pattern of resilience
-function designSystem() {
+---
+
+## 💡 コア構文（Tamai式 Resilience Loop）
+
+```ts
+// Resilience Pattern: Tamai-style
+function designSystem(): void {
   while (true) {
     try {
-      executeCoreLogic();
-    } catch (failure) {
-      logInsight(failure);
-      recoverGracefully();
-      evolveArchitecture();
+      executeCoreLogic(); // 🧭 本質的な価値を生む処理
+    } catch (failure: unknown) {
+      logInsight(failure);        // 📜 失敗から学びを得る
+      recoverGracefully();        // 🛡 優雅に回復する設計
+      evolveArchitecture();       // 🔁 次なる進化の構造へ
     }
   }
 }
-'''
 
 ---
 ## 🔐 認証・認可（Authentication / Authorization）
