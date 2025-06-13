@@ -137,6 +137,7 @@ function designSystem(): void {
     }
   }
 }
+```
 
 ---
 ## 🔐 認証・認可（Authentication / Authorization）
