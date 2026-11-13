@@ -16,25 +16,14 @@
 
 ---
 
-<h2 align="center">📈 Contribution Graph</h2>
-
-<p align="center">
-  <img
-    src="https://github-readme-activity-graph.vercel.app/graph?username=tamai-hideyuki&theme=tokyonight&bg_color=0d1117&color=00ffff&line=00ffff&point=ffffff&area=true&hide_border=true"
-    alt="Contribution Graph"
-  />
-</p>
-
-
----
-
 
 <h2 align="center">最近の開発</h2>
 
 | リポジトリ名 | 説明 |
 |--------------|------|
-| [brain-cabinet](https://github.com/tamai-hideyuki/brain-cabinet.git) | 思考や判断のノートを自然言語処理で解析し、内容の意味や関係性をクラスタリングして「自分の思考傾向・成長パターン」を可視化するシステム。いわば、思考ログを活用して自分の意思決定を支援する“外部脳”のようなもの |
-| [local-code-ai](https://github.com/tamai-hideyuki/local-code-ai.git) | ローカル環境で完結するAIコーディングアシスタントです。Ollamaと連携し、ファイルの読み書き、コード検索、シェル実行を自然言語で操作できます。「ローカルのみでどこまでできるか」を挑戦したもの |
+| [heyawari](https://github.com/tamai-hideyuki/heyawari) | 会議室の予約管理システム。二重予約をアプリ側のチェックではなく、PostgreSQL の排他制約（`EXCLUDE USING gist` + `tstzrange`）で防ぐことを設計の中心に置き、同時リクエストの競合を DB で確実に止める。Hono + Drizzle + React（TanStack Router / Query）の pnpm モノレポ構成 |
+| [stardust-notes](https://github.com/tamai-hideyuki/stardust-notes) | 書いた言葉が星になるメモ帳。保存すると文字が粒子に分解されて星になり、共通キーワードを持つメモ同士が星座として結ばれる（WebGL）。シードと時計を固定して描画を再現可能にし、ユニット / ブラウザ / Playwright E2E のテストで見た目の挙動まで検証 |
+| [brain-cabinet](https://github.com/tamai-hideyuki/brain-cabinet) | ノートの意味を理解し、思考の成長を可視化する「外部脳」。ローカル埋め込み（MiniLM + HNSW）によるセマンティック検索、SM-2 による間隔反復、思考の変化を追う Drift 分析などを実装。React + Three.js / Hono / SQLite + Drizzle のモジュラーモノリス構成で、CI とテストを備えて継続開発中 |
 
 ---
 
@@ -138,67 +127,75 @@
 
 <h2 align="center">✅ Tamai Hideyuki — Repository Snapshot</h2>
 
-## 🔐 認証・認可（Authentication / Authorization）
+## 🧠 AI・意味検索・ローカル LLM
 
 | リポジトリ名 | 説明 |
 |--------------|------|
-| [two-factor-auth](https://github.com/tamai-hideyuki/two-factor-auth.git) | LaravelでGoogle Authenticatorと連携した2段階認証（2FA）を実装したプロジェクト |
+| [semantica-notes](https://github.com/tamai-hideyuki/semantica-notes) | メモを「意味」で整理・検索するパーソナルナレッジベース。Sentence-Transformers（LaBSE）+ FAISS による意味検索を、クリーンアーキテクチャ + DDD（Domain / UseCase / Interface / Infrastructure）で構築 |
+| [rfc-chronicle](https://github.com/tamai-hideyuki/rfc-chronicle) | IETF の RFC を取り込み、SQLite FTS5 の全文検索と Sentence-Transformers + FAISS の意味検索を CLI / API から使えるツール。ローカルキャッシュでオフラインでも動作 |
+| [local-code-ai](https://github.com/tamai-hideyuki/local-code-ai) | Ollama と連携し、ファイル読み書き・コード検索・シェル実行を自然言語で操作できる CLI コーディングアシスタント。「ローカルだけでどこまでできるか」への挑戦 |
 
 ---
-## 🛠 CLI & Automation
+
+## 🏛 設計・アーキテクチャ
 
 | リポジトリ名 | 説明 |
 |--------------|------|
-| [devsetup](https://github.com/tamai-hideyuki/devsetup.git) | Dockerベースの**ノーコード開発起点自動生成ツール**。Laravel+Breeze+Google OAuth対応の認証基盤を対話CLIで即座に構築。Symfonyモジュールも搭載し、インフラ構築から認証設計までをローコードで完結。**「属人化ゼロ」ではなく、「構築そのものの省略」を目指す**開発支援ツール。 |
-| [git-rename](https://github.com/tamai-hideyuki/git-rename.git) | 複数プロジェクトの Git リモートURL を一括更新する Bash製ユーティリティ。dry-run対応、再帰処理でフォルダを自動スキャンし差分を明示。 |
+| [law-watch](https://github.com/tamai-hideyuki/law-watch) | 法改正を早期に検知する監視システム。Hono API + Next.js のモノレポを Clean Architecture（DDD 4 層）で設計し、Vitest による TDD で 200 以上のテストを実装。PostgreSQL + Prisma |
+| [non-functional-requirements](https://github.com/tamai-hideyuki/non-functional-requirements) | URL 短縮システムを題材に、非機能要件（性能・可用性・可観測性・セキュリティ等）を実装で学ぶリポジトリ。レート制限・リクエスト ID・構造化ログ・メトリクス・セキュリティヘッダをミドルウェアとして実装し、各層にテストを配置 |
 
 ---
 
-## 📊 スクリプト & 分析
-
-| リポジトリ名                                                                 | 説明                                                                                                                                                                  |
-|------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [TrendSeer](https://github.com/tamai-hideyuki/TrendSeer.git)           | TradingView 向け Pineスクリプト。テクニカル分析ロジックを実装                                                                                                                             |
-| [cam-motion](https://github.com/tamai-hideyuki/cam-motion.git)                                                         | Pythonベースのリアルタイムモーショントラッキング／CLIツール。OpenCV＋Mediapipeで手足検出、Makefile／スクリプトにより3秒でセットアップ                                                                                 |
-| [hourei-api-server](https://github.com/tamai-hideyuki/hourei-api-server.git) | (EC2デプロイ中) Laravel 10.x + Dockerで構築したe-Gov法令APIの中継サーバー。法令名一覧・条文内容・更新法令など、4種のAPIをラップし、Content-Type: XML形式で外部クライアントに提供可能。セミコロン構文など特殊仕様にも対応。動作確認APIも搭載し、API基盤として即利用可能。 |
-| [shihou-no-tomo](https://github.com/tamai-hideyuki/shihou-no-tomo.git) | e-Gov法令XML APIから日本法令を取得・整形・検索し、軽量LLM（Mistral GGUF）で自然言語応答可能な司法特化エージェントを構築。Metal対応MacBookでも動作する超軽量RAG構成。（現在構築中）                                                      |
----
-
-## 📚 LT資料
+## 🔌 バックエンド・API
 
 | リポジトリ名 | 説明 |
 |--------------|------|
-| [lt-ddd](https://github.com/tamai-hideyuki/lt-ddd.git) | DDD再入門スライド。個人開発にDDDを取り入れた実践例 |
-| [lt-oauth-reintro](https://github.com/tamai-hideyuki/lt-oauth-reintro.git) | Symfony×OAuthの再入門資料（スライド＋コード＋図解） |
+| [ec-api-sandbox](https://github.com/tamai-hideyuki/ec-api-sandbox) | EC サイトのバックエンド API。PHP 8.4 / Laravel 13 / Sanctum で、PHPUnit の Feature テストを中心に TDD で実装。API 設計ルール（論理削除・メソッドの使い分け）を明文化し、CI で自動テスト |
+| [hourei-api-server](https://github.com/tamai-hideyuki/hourei-api-server) | e-Gov 法令 API（法令一覧 / 本文 / 条文 / 更新情報）をラップする中継 API サーバーと検索 UI。Laravel 12 + React + Tailwind を Nginx / PHP-FPM / MySQL と合わせて docker compose で一括起動。CI あり |
 
 ---
 
-## 🌐 Web & PWA
-
-| リポジトリ名                                                             | 説明                                                                                                           |
-|--------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------|
-| [main](https://github.com/tamai-hideyuki/main.git)                 | オフライン⇔オンライン自動切替・IndexedDB連携のPWA実験環境                                                              |
-| [qr-generator](https://github.com/tamai-hideyuki/qr-generator.git) | 任意のURLからQRコードを生成し、ダウンロード可能にするWeb+PWAアプリ                                                       |
-| [php-chatgpt](https://github.com/tamai-hideyuki/chat-php-gpt.git)  | 純粋 PHP のみで動作する「ChatGPT風チャットボット」。セッション管理＋ファイルログで会話を永続化し、“考え中…”演出やキーワード抽出による文脈参照などの工夫を凝らした Web アプリ |
-| [recrui-track](https://github.com/tamai-hideyuki/recrui-track.git)                                                   |転職活動を可視化・管理する自己管理PWAツール。現在は最小構成として「ToDoリスト機能」のみを実装し、Next.js + Hono + Drizzle + Supabase による構成で運用。DDD（ドメイン駆動設計）とクリーンアーキテクチャをベースに、今後は企業・面接管理やSlack連携、AI分析機能の拡張を予定。|
-
----
-
-## 🎮 ゲーム & アルゴリズム
+## 🖥 デスクトップアプリ
 
 | リポジトリ名 | 説明 |
 |--------------|------|
-| [sudoku-generator](https://github.com/tamai-hideyuki/sudoku-generator.git) | 数独を6言語（PHP, JS, Ruby, etc）で自動生成するアルゴリズム実装 |
-| [knapsack-project](https://github.com/tamai-hideyuki/knapsack-project.git) | Shellスクリプトによるナップサック問題の実装 |
+| [browser](https://github.com/tamai-hideyuki/browser) | Arc 風ブラウザのプロトタイプ。Electron + TypeScript + React + Vite + Zustand + better-sqlite3 で、メイン / preload / UI のプロセス分離を設計。要件書・詳細設計書を docs に整備 |
 
 ---
 
-## ⚙️ 学習用 & 設計検証
+## 🎨 グラフィックス・3D
 
-| リポジトリ名 | 説明                                      |
-|--------------|-----------------------------------------|
-| [docker-symfony-lite](https://github.com/tamai-hideyuki/docker-symfony-lite.git) | Symfony理解のために構築した最小Docker構成             |
-| [ddd-ec-project](https://github.com/tamai-hideyuki/ddd-ec-project.git) | DDD＋クリーンアーキテクチャを適用したECサイトプロトタイプ（現在構築中） |
+| リポジトリ名 | 説明 |
+|--------------|------|
+| [DepthWalk](https://github.com/tamai-hideyuki/DepthWalk) | レイキャスティングによる疑似 3D 探索ゲームエンジン。Canvas 2D API と TypeScript で、複数階層の移動、室内 / 屋外の切り替え、視点の上下移動に対応 |
+| [inner-cosmos](https://github.com/tamai-hideyuki/inner-cosmos) | Three.js + TypeScript で「呼吸する球体」を制作。scale アニメーションと同期した発光（emissive）、Bloom 後処理など、CSS ではなくシェーダーやマテリアルで見た目を作る |
+
+---
+
+## 🛠 CLI・自動化・計測
+
+| リポジトリ名 | 説明 |
+|--------------|------|
+| [devsetup](https://github.com/tamai-hideyuki/devsetup) | Docker を基盤に、Laravel + Breeze + OAuth / Symfony / MySQL / Nginx の開発環境構築を対話型 CLI で自動化するツール。分割モジュール構成で、再現性のある構成パターンをメニューから選択 |
+| [m4-sustained-performance-lab](https://github.com/tamai-hideyuki/m4-sustained-performance-lab) | MacBook Pro（M4 Pro）と MacBook Air（M4）の「電力制御込みの持続性能」を比較するベンチマークツール。`powermetrics` で電力を計測し、瞬間性能（Burst）と持続性能（Sustained）の差を数値で可視化 |
+
+---
+
+## 🔐 セキュリティ・認証
+
+| リポジトリ名 | 説明 |
+|--------------|------|
+| [VulnLab-TS](https://github.com/tamai-hideyuki/VulnLab-TS) | 「このコードで SQL Injection を潰した理由」をコードで説明できることを目指したセキュリティ教材。TypeScript + Hono / Express + SQLite で脆弱性を再現し、修正まで実装 |
+| [lt-oauth-reintro](https://github.com/tamai-hideyuki/lt-oauth-reintro) | OAuth の再入門 LT 資料。Symfony（KnpUOAuth2ClientBundle）の内部構造や Laravel との設計思想の違いを、スライド + コード + 図解で解説 |
+
+---
+
+## 📡 IoT
+
+| リポジトリ名 | 説明 |
+|--------------|------|
+| [picoW-E](https://github.com/tamai-hideyuki/picoW-E) | Raspberry Pi Pico W + MicroPython で、OLED 表示・Wi-Fi 監視・ブラウザからの LED 制御を実装。BME280 で取得した気温・湿度・気圧を蓄積し、グラフ表示する HTTP サーバーを構築 |
+
 ---
 
 
