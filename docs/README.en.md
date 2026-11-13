@@ -1,78 +1,29 @@
-### [日本語 ☞](../README.md)
-
-
 <!-- Typing Banner -->
 <p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=26&pause=1000&center=true&width=440&lines=Welcome+to+my+GitHub!" />
+  <img
+    src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=26&pause=1000&center=true&width=440&lines=Welcome+to+my+GitHub!"
+    alt="Typing Banner"
+  />
 </p>
 
-
-<h2 align="center">📊 My GitHub Stats</h2>
-
 <p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=tamai-hideyuki&show_icons=true&count_private=true&include_all_commits=true&hide_border=true&theme=tokyonight&custom_title=The%20Code%20Hideyuki's%20Stats" />
-</p>
-
-
-<h2 align="center">🧩 Most Used Languages</h2>
-
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=tamai-hideyuki&layout=compact&langs_count=8&hide_border=true&theme=tokyonight" />
-</p>
-
-
-<h2 align="center">🔥 Streaks</h2>
-
-<p align="center">
-  <img src="https://streak-stats.demolab.com?user=tamai-hideyuki&theme=tokyonight&hide_border=true" />
-</p>
-
----
-
-<h2 align="center">📌 Pinned Projects</h2>
-
-<p align="center">
-  <a href="https://github.com/tamai-hideyuki/rfc-chronicle.git">
-    <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=tamai-hideyuki&repo=rfc-chronicle&theme=tokyonight" />
-
-  </a>
-  <a href="https://github.com/tamai-hideyuki/recrui-track.git">
-    <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=tamai-hideyuki&repo=recrui-track&theme=tokyonight" />
-
-  </a>
-  <a href="https://github.com/tamai-hideyuki/devsetup.git">
-    <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=tamai-hideyuki&repo=devsetup&theme=tokyonight" />
-
-  </a>
-  <a href="https://github.com/tamai-hideyuki/ec-ddd-php-sample.git">
-    <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=tamai-hideyuki&repo=ec-ddd-php-sample&theme=tokyonight" />
-
-  </a>
-  <a href="https://github.com/tamai-hideyuki/hourei-api-server.git">
-    <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=tamai-hideyuki&repo=hourei-api-server&theme=tokyonight" />
-
-  </a>
+  <img
+    src="../assets/resilience-pattern.png"
+    alt="Resilience Pattern"
+    width="700"
+  />
 </p>
 
 ---
 
 
-<h2 align="center">💡 My core as an engineer</h2>
+<h2 align="center">Recent Work</h2>
 
-```ts
-// Resilience Pattern: Tamai Hideyuki Style
-function designSystem(): void {
-    while (true) {
-        try {
-            executeCoreLogic();           // Processing that creates intrinsic value
-        } catch (failure: unknown) {
-            logInsight(failure);          // Learn from failure
-            recoverGracefully();          // Recover gracefully
-            evolveArchitecture();         // Towards the next evolution
-        }
-    }
-}
-```
+| Repository | Description |
+|--------------|------|
+| [heyawari](https://github.com/tamai-hideyuki/heyawari) | A meeting-room booking system. The core design decision: double bookings are prevented by a PostgreSQL exclusion constraint (`EXCLUDE USING gist` + `tstzrange`) rather than by application-side checks, so concurrent requests are reliably stopped at the DB level. pnpm monorepo with Hono + Drizzle + React (TanStack Router / Query) |
+| [stardust-notes](https://github.com/tamai-hideyuki/stardust-notes) | A notepad where your words become stars. On save, the text breaks into particles that form a star, and notes sharing keywords are linked into constellations (WebGL). Seed and clock are fixed so rendering is reproducible, and visual behavior is verified with unit, browser, and Playwright E2E tests |
+| [brain-cabinet](https://github.com/tamai-hideyuki/brain-cabinet) | An "external brain" that understands the meaning of notes and visualizes how your thinking grows. Implements semantic search with local embeddings (MiniLM + HNSW), SM-2 spaced repetition, and drift analysis that tracks changes in thinking. Modular monolith with React + Three.js / Hono / SQLite + Drizzle, under continuous development with CI and tests |
 
 ---
 
@@ -158,8 +109,9 @@ function designSystem(): void {
 </p>
 
 ---
+#### [日本語 ☞](../README.md)
 
-## 🌱 Aspiring Developer Vision
+<h2 align="center">🌱 Aspiring Developer Vision</h2>
 I aspire to be an engineer who discovers problems through product development and solves them with technology.
 
 Engineering is not merely the application of tools; it is the practice of confronting fundamental problems and continually seeking better ways forward. In daily development, I value a mindset that constantly questions “Why this specification?” and “What creates the most value?”, while using my own hands to explore better options.
@@ -171,64 +123,81 @@ Development cannot be achieved alone. By fostering psychological safety, maintai
 Ultimately, I seek to broaden my perspective and influence so that I can contribute not only to design and implementation, but also to decisions affecting the overall quality and growth of a product.
 
 ---
-## 🔐 Authentication / Authorization
+
+<h2 align="center">✅ Tamai Hideyuki — Repository Snapshot</h2>
+
+## 🧠 AI, Semantic Search & Local LLM
 
 | Repository | Description |
 |--------------|------|
-| [two-factor-auth](https://github.com/tamai-hideyuki/two-factor-auth.git) | A project implementing two-factor authentication (2FA) in Laravel integrated with Google Authenticator |
+| [semantica-notes](https://github.com/tamai-hideyuki/semantica-notes) | A personal knowledge base that organizes and searches notes by meaning. Semantic search with Sentence-Transformers (LaBSE) + FAISS, built on Clean Architecture + DDD (Domain / UseCase / Interface / Infrastructure) |
+| [rfc-chronicle](https://github.com/tamai-hideyuki/rfc-chronicle) | A tool that ingests IETF RFCs and offers SQLite FTS5 full-text search and Sentence-Transformers + FAISS semantic search via CLI / API. Works offline with a local cache |
+| [local-code-ai](https://github.com/tamai-hideyuki/local-code-ai) | A CLI coding assistant integrated with Ollama that reads/writes files, searches code, and runs shell commands from natural language. A challenge to see how far a fully local setup can go |
 
 ---
-## 🛠 CLI & Automation
+
+## 🏛 Design & Architecture
 
 | Repository | Description |
 |--------------|------|
-| [devsetup](https://github.com/tamai-hideyuki/devsetup.git) | Docker-based zero-code development bootstrap tool. Instantly builds an authentication platform (Laravel + Breeze + Google OAuth) via an interactive CLI. Includes a Symfony module, covering everything from infrastructure provisioning to auth design with low code. A development aid that aims not for “zero individual dependency,” but for “omitting the build process itself.” |
-| [git-rename](https://github.com/tamai-hideyuki/git-rename.git) | A Bash utility that batch-updates Git remote URLs across multiple projects. Supports dry-run, recursively scans directories, and clearly shows differences. |
+| [law-watch](https://github.com/tamai-hideyuki/law-watch) | A monitoring system for early detection of legal amendments. A Hono API + Next.js monorepo designed with Clean Architecture (4-layer DDD), with 200+ tests written via TDD in Vitest. PostgreSQL + Prisma |
+| [non-functional-requirements](https://github.com/tamai-hideyuki/non-functional-requirements) | Learning non-functional requirements (performance, availability, observability, security, etc.) through implementation, using a URL shortener as the subject. Rate limiting, request IDs, structured logging, metrics, and security headers are implemented as middleware, each with tests |
 
 ---
 
-## 📊 Scripts & Analytics
-
-| Repository                                                                 | Description                                                                                                           |
-|------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------|
-| [TrendSeer](https://github.com/tamai-hideyuki/TrendSeer.git)           | Pine script for TradingView implementing technical-analysis logic                                                                      |
-| [cam-motion](https://github.com/tamai-hideyuki/cam-motion.git)                                                         | Python-based real-time motion-tracking CLI tool. Detects hands and feet with OpenCV + MediaPipe; setup completes in 3 seconds via Makefile/scripts |
-| [hourei-api-server](https://github.com/tamai-hideyuki/hourei-api-server.git) | Relay server for the e-Gov Law API built with Laravel 12.x + Docker. Wraps four APIs (law list, full text, articles, updates) and provides them to external clients in XML format. Supports special syntax such as semicolon notation and includes test endpoints for immediate use. |
-| [shihou-no-tomo](https://github.com/tamai-hideyuki/shihou-no-tomo.git) | 	Retrieves, formats, and searches Japanese laws via the e-Gov Law XML API, building a law-specialized agent capable of natural-language responses with a lightweight LLM (Mistral GGUF). An ultra-light RAG setup that runs even on Metal-compatible MacBooks. (In progress) |
----
-
-## 📚 LT Materials
+## 🔌 Backend & API
 
 | Repository | Description |
 |--------------|------|
-| [lt-ddd](https://github.com/tamai-hideyuki/lt-ddd.git) | Re-introduction to DDD slides, featuring practical examples of applying DDD in personal development |
-| [lt-oauth-reintro](https://github.com/tamai-hideyuki/lt-oauth-reintro.git) | Re-introduction materials on OAuth with Symfony (slides + code + diagrams)|
+| [ec-api-sandbox](https://github.com/tamai-hideyuki/ec-api-sandbox) | Backend API for an e-commerce site. Built test-first with PHP 8.4 / Laravel 13 / Sanctum, centered on PHPUnit feature tests. API design rules (soft deletes, HTTP method usage) are documented, with automated tests in CI |
+| [hourei-api-server](https://github.com/tamai-hideyuki/hourei-api-server) | A relay API server and search UI wrapping the e-Gov Law API (law list / full text / articles / updates). Laravel 12 + React + Tailwind, launched together with Nginx / PHP-FPM / MySQL via docker compose. Includes CI |
 
 ---
 
-## 🌐 Web & PWA
-
-| Repository | Description                                                                                      |
-|--------------|--------------------------------------------------------------------------------------------------|
-| [main](https://github.com/tamai-hideyuki/main.git) | Experimental PWA environment with automatic offline ↔ online switching and IndexedDB integration |
-
----
-
-## 🎮 Games & Algorithms
+## 🖥 Desktop Apps
 
 | Repository | Description |
 |--------------|------|
-| [sudoku-generator](https://github.com/tamai-hideyuki/sudoku-generator.git) | Algorithm that automatically generates Sudoku puzzles in six languages (PHP, JS, Ruby, etc.) |
-| [knapsack-project](https://github.com/tamai-hideyuki/knapsack-project.git) | 	Implementation of the knapsack problem in Shell script |
+| [browser](https://github.com/tamai-hideyuki/browser) | An Arc-style browser prototype. Electron + TypeScript + React + Vite + Zustand + better-sqlite3, with a deliberate separation of main / preload / UI processes. Requirements and detailed design documents are maintained in docs |
 
 ---
 
-## ⚙️ Learning & Design PoC
+## 🎨 Graphics & 3D
 
-| Repository | Description                                      |
-|--------------|-----------------------------------------|
-| [docker-symfony-lite](https://github.com/tamai-hideyuki/docker-symfony-lite.git) | Minimal Docker setup built to understand Symfony             |
-| [ddd-ec-project](https://github.com/tamai-hideyuki/ddd-ec-project.git) | 	E-commerce site prototype applying DDD + Clean Architecture (currently under construction) |
+| Repository | Description |
+|--------------|------|
+| [DepthWalk](https://github.com/tamai-hideyuki/DepthWalk) | A pseudo-3D exploration game engine using ray casting. Built with the Canvas 2D API and TypeScript, supporting multi-floor movement, indoor/outdoor transitions, and vertical camera pitch |
+| [inner-cosmos](https://github.com/tamai-hideyuki/inner-cosmos) | A "breathing sphere" built with Three.js + TypeScript. Scale animation with synchronized emissive glow and Bloom post-processing: creating visuals with shaders and materials instead of CSS |
+
 ---
+
+## 🛠 CLI, Automation & Benchmarking
+
+| Repository | Description |
+|--------------|------|
+| [devsetup](https://github.com/tamai-hideyuki/devsetup) | An interactive CLI that automates Docker-based development environment setup for Laravel + Breeze + OAuth / Symfony / MySQL / Nginx. Modular structure lets you pick reproducible configuration patterns from a menu |
+| [m4-sustained-performance-lab](https://github.com/tamai-hideyuki/m4-sustained-performance-lab) | A benchmark tool comparing the power-limited sustained performance of a MacBook Pro (M4 Pro) and a MacBook Air (M4). Measures power with `powermetrics` and quantifies the gap between burst and sustained performance |
+
+---
+
+## 🔐 Security & Authentication
+
+| Repository | Description |
+|--------------|------|
+| [VulnLab-TS](https://github.com/tamai-hideyuki/VulnLab-TS) | Security learning material aiming to explain fixes in code, e.g. why this change eliminates SQL injection. Reproduces vulnerabilities and implements their fixes with TypeScript + Hono / Express + SQLite |
+| [lt-oauth-reintro](https://github.com/tamai-hideyuki/lt-oauth-reintro) | Lightning-talk materials re-introducing OAuth. Explains the internals of Symfony (KnpUOAuth2ClientBundle) and the design-philosophy differences from Laravel with slides, code, and diagrams |
+
+---
+
+## 📡 IoT
+
+| Repository | Description |
+|--------------|------|
+| [picoW-E](https://github.com/tamai-hideyuki/picoW-E) | OLED display, Wi-Fi monitoring, and browser-controlled LEDs on Raspberry Pi Pico W + MicroPython. Builds an HTTP server that stores temperature, humidity, and pressure from a BME280 sensor and plots them as graphs |
+
+---
+
 
 > This page is continuously updated.
+
+### [📚 Notes (Japanese) ☞](./learning-journal.md)
