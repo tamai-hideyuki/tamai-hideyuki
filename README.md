@@ -8,7 +8,7 @@
 
 <p align="center">
   <img
-    src="assets/resilience-pattern-v2.png"
+    src="assets/resilience-pattern-v3.png"
     alt="Resilience Pattern"
     width="700"
   />
