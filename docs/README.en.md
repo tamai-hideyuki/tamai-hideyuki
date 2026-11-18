@@ -14,6 +14,12 @@
   />
 </p>
 
+<p align="center">
+  <a href="https://zenn.dev/tamai_hideyuki">
+    <img src="https://img.shields.io/badge/Zenn-tamai__hideyuki-3EA8FF?style=for-the-badge&logo=zenn&logoColor=white" alt="Zenn"/>
+  </a>
+</p>
+
 ---
 
 
